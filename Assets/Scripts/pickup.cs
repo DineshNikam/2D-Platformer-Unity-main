@@ -51,5 +51,18 @@ public class pickup : MonoBehaviour
             }
 
         }
+
+        if (pt == pickupType.health)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Health hp = collision.GetComponent<Health>()
+                    ?? collision.GetComponentInParent<Health>();
+                if (hp != null)
+                    hp.Heal(1f);
+                SpawnPickupEffectAt(transform.position);
+                Destroy(gameObject, 0.2f);
+            }
+        }
     }
 }

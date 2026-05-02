@@ -6,72 +6,64 @@ public class HealthManager : MonoBehaviour
     public static HealthManager instance;
     public GameObject damageEffect;
 
-    private int MaxHealth = 6;
-    public int currentHealth;
-
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite FullHeartSprite;
-    [SerializeField] private Sprite HalfHeartSprite;
     [SerializeField] private Sprite EmptyHeartSprite;
 
-    private GameObject Player;
+    Health _health;
 
-    private void Awake()
+    Transform _damageEffectAnchor;
+
+    void Awake()
     {
         instance = this;
     }
 
-    private void Start()
+    void Start()
     {
-        Player = GameObject.FindObjectOfType<PlayerController>().gameObject;
-        currentHealth = MaxHealth;
+        var player = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+        if (player == null)
+            return;
+
+        _damageEffectAnchor = player.transform;
+        _health = player.GetComponent<Health>();
+        if (_health == null)
+        {
+            Debug.LogWarning("HealthManager: PlayerController has no Health component.");
+            return;
+        }
+
+        _health.Damaged += OnPlayerDamaged;
         DisplayHearts();
     }
-   
-  
 
-    public void HurtPlayer()
+    void OnDestroy()
     {
+        if (_health != null)
+            _health.Damaged -= OnPlayerDamaged;
+    }
 
-        if (currentHealth > 0)
-        {
-            currentHealth--;
-            DisplayHearts();
-            //Player.GetComponent<PlayerController>().Knockback();
-        }
-        else if (currentHealth <= 0)
-        {
-            GameManager.instance.Death();
-        }
-        
-        Instantiate(damageEffect, Player.transform.position, Quaternion.identity);
+    void OnPlayerDamaged(float amount, float remaining)
+    {
+        DisplayHearts();
+        if (damageEffect != null && _damageEffectAnchor != null)
+            Instantiate(damageEffect, _damageEffectAnchor.position, Quaternion.identity);
     }
 
     public void DisplayHearts()
     {
-        int fullHeartsCount = currentHealth / 2; // Calculate the number of full hearts
-        bool hasHalfHeart = (currentHealth % 2) == 1; // Check if there's a half heart needed
+        if (hearts == null || hearts.Length == 0 || _health == null)
+            return;
+
+        int maxSlots = Mathf.Min(hearts.Length, Mathf.RoundToInt(_health.MaxHp));
+        int filled = Mathf.Clamp((_health != null) ? Mathf.RoundToInt(_health.CurrentHp) : 0, 0, maxSlots);
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < fullHeartsCount)
-            {
-                // Heart should be full
-                hearts[i].sprite = FullHeartSprite;
-            }
-            else if (hasHalfHeart && i == fullHeartsCount)
-            {
-                // Heart should be half
-                hearts[i].sprite = HalfHeartSprite;
-            }
-            else
-            {
-                // Heart should be empty
-                hearts[i].sprite = EmptyHeartSprite;
-            }
+            Image heartImage = hearts[i];
+            if (heartImage == null)
+                continue;
+            heartImage.sprite = i < filled ? FullHeartSprite : EmptyHeartSprite;
         }
     }
-
-    
-
 }

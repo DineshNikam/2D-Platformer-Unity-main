@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerController playerController;
 
+    Health _playerHealth;
+
     private int coinCount = 0;
     private int gemCount = 0;
     private bool isGameOver = false;
@@ -45,6 +47,21 @@ public class GameManager : MonoBehaviour
         playerPosition = playerController.transform.position;
 
         FindTotalPickups();
+
+        _playerHealth = playerController != null ? playerController.GetComponent<Health>() : null;
+        if (_playerHealth != null)
+            _playerHealth.Died += HandlePlayerHealthDied;
+    }
+
+    void OnDestroy()
+    {
+        if (_playerHealth != null)
+            _playerHealth.Died -= HandlePlayerHealthDied;
+    }
+
+    void HandlePlayerHealthDied()
+    {
+        Death();
     }
 
     public void IncrementCoinCount()
