@@ -362,6 +362,8 @@ Chunk (Root GameObject)
       ├── BG\_Pillar  
       └── Hazard\_Spikes (optional)
 
+*💡 **Stage A:** the root must include **PlatformChunk** (width measured or set manually). **StartPoint / EndPoint** become mandatory when you implement **Stage B** snapping.*
+
 ## **7.3 Chunk manager behaviour (target + Stage A)**
 
 * Keep a small pool of active chunks (**3+**): behind \| current \| ahead.

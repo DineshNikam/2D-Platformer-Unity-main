@@ -144,16 +144,19 @@ The **product vision** matches **NeonRunner_GDD_v1.md §0**: endless neon runner
 
 # **PHASE 3: CHUNK SYSTEM**
 
-*Goal: Level is infinite. Pre-built chunk prefabs scroll and are destroyed behind the player. Difficulty scales as chunks pass.*
+*Goal: The level **never ends**. Pre-built chunk prefabs are **kept in a moving pool**—either **recycled on X** (Stage A) or **spawned/despawned at anchors** (Stage B). Difficulty scales as **chunks pass** or distance increases.*
 
-**Exit Criteria: 6 different chunks cycle infinitely for 5+ minutes without gaps, crashes, or visual seams.**
+**Exit criteria:** At least six chunk *variants* in the loop; a five-plus-minute run with no gaps, crashes, or seams; hooks in place for GDD §7.4 difficulty tiers.
 
 ## **Phase 3 Task Board**
 
 | ID | TASK | EST | PRIORITY | STATUS | AI PROMPT / NOTES |
 | :---: | ----- | :---: | :---: | :---: | ----- |
-| **P3-01** | Design Chunk prefab structure (StartPoint, EndPoint) | 30m | HIGH | \[ \] TODO | Create empty Chunk prefab. Add StartPoint and EndPoint child transforms. See GDD Section 7.2 |
-| **P3-02** | Create ChunkManager.cs | 60m | HIGH | \[ \] TODO | AI: "Write ChunkManager MonoBehaviour: maintains 3 active chunks, spawns at EndPoint, destroys behind player, tracks chunksPassed" |
+| **P3-00a** | Add **PlatformChunk** to each chunk prefab root (`Assets/Chunks/*.prefab`) | 20m | HIGH | \[ \] TODO | Auto width=0 uses collider bounds; or set **chunkWidth** manually. Matches GDD §7.0 Stage A. |
+| **P3-00b** | Wire **HorizontalChunkStreamer** in gameplay scene | 30m | HIGH | \[ \] TODO | Assign player, prefab list, `worldStartLeftX`, `levelPositionYZ`, recycle distances. See `Assets/Scripts/HorizontalChunkStreamer.cs`. |
+| **P3-00c** | PLAYTEST: out-and-back on X | 15m | HIGH | \[ \] TODO | Confirm recycling when player runs **left** and **right**; tweak `recycleBehindDistance` / `recycleAheadDistance`. |
+| **P3-01** | Design Chunk prefab structure (StartPoint, EndPoint) | 30m | HIGH | \[ \] TODO | **Stage B.** Create empty Chunk prefab. Add StartPoint and EndPoint child transforms. See GDD §7.2 |
+| **P3-02** | Create **ChunkManager.cs** (or extend streamer) | 60m | HIGH | \[ \] TODO | **Stage B:** weighted selection, no immediate repeat, `chunksPassed`, optional EndPoint triggers. May wrap or replace horizontal recycler internals—see GDD §7.0 |
 | **P3-03** | Build Chunk 1: Flat\_Open\_01 (intro chunk) | 45m | HIGH | \[ \] TODO | Wide flat ground, 1 CrabEnemy spawn point. This is the first chunk player always sees |
 | **P3-04** | Build Chunk 2: Gap\_Jump\_01 | 45m | HIGH | \[ \] TODO | Two gaps, 3 platforms. 1 Crab \+ 1 Fish spawn point |
 | **P3-05** | Create FishEnemy.cs (formation \+ arc projectile) | 60m | HIGH | \[ \] TODO | AI: "Write FishEnemy extending EnemyBase: follows leader in V-formation, leader fires arc projectile every 3s" |
@@ -161,7 +164,7 @@ The **product vision** matches **NeonRunner_GDD_v1.md §0**: endless neon runner
 | **P3-07** | Build Chunk 4: Air\_Gauntlet\_01 | 45m | MED | \[ \] TODO | Airborne focus. 3 FishGroups. Minimal ground. |
 | **P3-08** | Build Chunk 5: Spike\_Run\_01 | 45m | MED | \[ \] TODO | Add spike hazard sprites. 2 Crab with tight platforms. |
 | **P3-09** | Build Chunk 6: Chaos\_01 | 45m | MED | \[ \] TODO | Max enemies. Dense chunk. Should feel overwhelming. |
-| **P3-10** | Implement difficulty tier system in ChunkManager | 45m | HIGH | \[ \] TODO | AI: "Add difficulty tier to ChunkManager: tiers 1-4 based on chunksPassed, adjust enemy count and speed multiplier" |
+| **P3-10** | Implement difficulty tier system (**ChunkManager** or interim counter on streamer) | 45m | HIGH | \[ \] TODO | Tiers 1–4 from `chunksPassed` / distance; adjust enemy density \+ speed. Until ChunkManager exists, expose events from **HorizontalChunkStreamer**. |
 | **P3-11** | Generate Fish enemy sprite (AI) | 30m | MED | \[ \] TODO | Midjourney: "20x12 pixel art fish enemy, neon teal, facing right, dark bg, transparent" |
 | **P3-12** | Add EnemyPool for Crab and Fish | 30m | HIGH | \[ \] TODO | Pool size: Crab=6, Fish=15. See GDD Section 10.4 |
 | **P3-13** | Add camera left-boundary collider that moves with camera | 20m | HIGH | \[ \] TODO | AI: "Create a script that moves a BoxCollider2D to match camera left edge, preventing player from going left" |
@@ -189,7 +192,7 @@ The **product vision** matches **NeonRunner_GDD_v1.md §0**: endless neon runner
 
 | ID | TASK | EST | PRIORITY | STATUS | AI PROMPT / NOTES |
 | :---: | ----- | :---: | :---: | :---: | ----- |
-| **P4-01** | Create CameraSystem.cs (right-only follow) | 45m | HIGH | \[ \] TODO | AI: "Write CameraSystem MonoBehaviour: follow player, never decrease camera X, SmoothDamp horizontal, Lerp vertical, apply facing offset" |
+| **P4-01** | Create CameraSystem.cs (right-only follow) **or** tune Cinemachine to match GDD §8.1 | 45m | HIGH | \[ \] TODO | **Repo has Cinemachine.** Either enforce monotonic X + look-ahead with **Cinemachine** extensions/confiner, or implement custom **CameraSystem** per GDD. |
 | **P4-02** | Configure PixelPerfectCamera component | 20m | HIGH | \[ \] TODO | Resolution 1280x720, PPU 32, CropFrame Stretchfill, GridSnapping ON |
 | **P4-03** | Add facing look-ahead offset to camera | 20m | MED | \[ \] TODO | When facing right: \+2 unit offset. Smooth transition between offsets. |
 | **P4-04** | Create GameFeel.cs singleton (Freeze \+ Shake) | 45m | HIGH | \[ \] TODO | AI: "Write GameFeel MonoBehaviour singleton with Freeze(duration, timeScale) and Shake(intensity, duration) using coroutines. Use unscaledDeltaTime for shake." |
@@ -298,7 +301,7 @@ The **product vision** matches **NeonRunner_GDD_v1.md §0**: endless neon runner
 
 | \# | DATE | TASK/SECTION CHANGED | WHAT CHANGED | REASON / IMPACT |
 | :---: | ----- | ----- | ----- | ----- |
-| 1 | \_\_\_\_\_\_\_\_\_\_ |  |  |  |
+| 1 | 2026-05-02 | GDD + Tracker | Aligned with **repo baseline:** URP, template PlayerController, **Stage A** chunks (`PlatformChunk`, `HorizontalChunkStreamer`), Cinemachine allowed until custom camera. Added GDD §0 / §7.0; P3-00\* tasks; Phase 3 goal wording. | Same product vision; technical path split into **Stage A → B** so docs match current code. |
 | 2 | \_\_\_\_\_\_\_\_\_\_ |  |  |  |
 | 3 | \_\_\_\_\_\_\_\_\_\_ |  |  |  |
 | 4 | \_\_\_\_\_\_\_\_\_\_ |  |  |  |
