@@ -16,11 +16,25 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
 
+    [Tooltip("Feet overlap radius. Larger helps Tilemaps / CompositeCollider2D after chunk moves.")]
+    [SerializeField] float groundCheckRadius = 0.12f;
+
+    [Tooltip("Ground ray length (used with overlap — whichever hits first).")]
+    [SerializeField] float groundRayLength = 0.28f;
+
+    /// <summary>While vertical speed is below this, floor collision can restore jump charges (avoids resetting while moving up through a corner).</summary>
+    [SerializeField] float jumpResetMaxUpVelocity = 0.35f;
+
     private Rigidbody2D rb;
     private bool isGroundedBool = false;
-    private bool canDoubleJump = false;
+    private bool wasGroundedLastFrame;
+    /// <summary>2 after a real landing / standing on floor; decrements per jump. Refill is driven by ground + velocity / floor contacts.</summary>
+    private int jumpsRemaining;
 
     public Animator playeranim;
+
+    bool _animHasRun;
+    bool _animHasIsGrounded;
 
     public Controls controlmode;
    
@@ -42,9 +56,6 @@ public class PlayerController : MonoBehaviour
     private float nextFireTime = 0f; // Time of the next allowed shot
 
 
-    
-
-
 
 
     private void Start()
@@ -57,35 +68,43 @@ public class PlayerController : MonoBehaviour
             UIManager.instance.EnableMobileControls();
         }
 
+        CacheAnimatorBoolParams();
+    }
 
+    void CacheAnimatorBoolParams()
+    {
+        _animHasRun = false;
+        _animHasIsGrounded = false;
+        if (playeranim == null || playeranim.runtimeAnimatorController == null)
+            return;
+
+        for (int i = 0; i < playeranim.parameterCount; i++)
+        {
+            AnimatorControllerParameter p = playeranim.GetParameter(i);
+            if (p.type != AnimatorControllerParameterType.Bool)
+                continue;
+            if (p.name == "run")
+                _animHasRun = true;
+            else if (p.name == "isGrounded")
+                _animHasIsGrounded = true;
+        }
     }
 
     private void Update()
     {
         isGroundedBool = IsGrounded();
 
-        if (isGroundedBool)
+        // Refill when we become grounded this frame (air → ground) — good for clean landings.
+        if (isGroundedBool && !wasGroundedLastFrame)
+            jumpsRemaining = 2;
+
+        wasGroundedLastFrame = isGroundedBool;
+
+        if (controlmode == Controls.pc)
         {
-            canDoubleJump = true; // Reset double jump when grounded
-
-            if (controlmode == Controls.pc)
-            {
-                moveX = Input.GetAxis("Horizontal");
-            }
-
-
+            moveX = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Jump"))
-            {
-                Jump(jumpForce);
-            }
-        }
-        else
-        {
-            if (canDoubleJump && Input.GetButtonDown("Jump"))
-            {
-                Jump(doubleJumpForce);
-                canDoubleJump = false; // Disable double jump until grounded again
-            }
+                TryConsumeJump();
         }
 
         if (!isPaused)
@@ -127,19 +146,29 @@ public class PlayerController : MonoBehaviour
     }
     public void SetAnimations()
     {
-        if (moveX != 0 && isGroundedBool)
+        if (playeranim == null)
+            return;
+
+        if (_animHasRun)
         {
-            playeranim.SetBool("run", true);
-            footEmissions.rateOverTime= 35f;
+            if (moveX != 0 && isGroundedBool)
+            {
+                playeranim.SetBool("run", true);
+                footEmissions.rateOverTime = 35f;
+            }
+            else
+            {
+                playeranim.SetBool("run", false);
+                footEmissions.rateOverTime = 0f;
+            }
         }
         else
         {
-            playeranim.SetBool("run",false);
-            footEmissions.rateOverTime = 0f;
+            footEmissions.rateOverTime = moveX != 0 && isGroundedBool ? 35f : 0f;
         }
 
-        playeranim.SetBool("isGrounded", isGroundedBool);
-       
+        if (_animHasIsGrounded)
+            playeranim.SetBool("isGrounded", isGroundedBool);
     }
 
     private void FlipSprite(float direction)
@@ -168,48 +197,86 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
     }
 
-    private void Jump(float jumpForce)
+    private void Jump(float force)
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Zero out vertical velocity
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        playeranim.SetTrigger("jump");
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        if (playeranim != null)
+            playeranim.SetTrigger("jump");
     }
 
-    private bool IsGrounded()
+    void TryConsumeJump()
     {
-        float rayLength = 0.25f;
-        Vector2 rayOrigin = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.1f);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
+        if (jumpsRemaining <= 0)
+            return;
+
+        if (jumpsRemaining == 2)
+            Jump(jumpForce);
+        else
+            Jump(doubleJumpForce);
+
+        jumpsRemaining--;
+    }
+
+    /// <summary>Ray + overlap: more reliable with tilemaps and moving chunk colliders than a short ray alone.</summary>
+    bool IsGrounded()
+    {
+        if (groundCheck == null)
+            return false;
+
+        Vector2 feet = groundCheck.position;
+        if (Physics2D.OverlapCircle(feet, groundCheckRadius, groundLayer))
+            return true;
+
+        Vector2 rayOrigin = new Vector2(feet.x, feet.y - 0.05f);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundRayLength, groundLayer);
         return hit.collider != null;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    /// <summary>If the ray misses but we are standing on a floor collider (common after chunk recycling), restore jumps.</summary>
+    void TryRefillJumpsFromFloorCollision(Collision2D collision)
+    {
+        if (!IsInGroundMask(collision.gameObject.layer))
+            return;
+
+        if (rb.linearVelocity.y > jumpResetMaxUpVelocity)
+            return;
+
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            ContactPoint2D c = collision.GetContact(i);
+            if (c.normal.y > 0.45f)
+            {
+                jumpsRemaining = 2;
+                return;
+            }
+        }
+    }
+
+    static bool IsInGroundMask(int layer, LayerMask mask)
+    {
+        return (mask.value & (1 << layer)) != 0;
+    }
+
+    bool IsInGroundMask(int layer) => IsInGroundMask(layer, groundLayer);
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "killzone")
         {
             GameManager.instance.Death();
+            return;
         }
+
+        TryRefillJumpsFromFloorCollision(collision);
     }
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("killzone"))
+            return;
+        TryRefillJumpsFromFloorCollision(collision);
+    }
 
 
 
@@ -220,20 +287,7 @@ public class PlayerController : MonoBehaviour
     }
     public void MobileJump()
     {
-        if (isGroundedBool)
-        {
-            // Perform initial jump
-            Jump(jumpForce);
-        }
-        else
-        {
-            // Perform double jump if allowed
-            if (canDoubleJump)
-            {
-                Jump(doubleJumpForce);
-                canDoubleJump = false; // Disable double jump until grounded again
-            }
-        }
+        TryConsumeJump();
     }
 
     public void Shoot()

@@ -5940,7 +5940,7 @@ MonoBehaviour:
   doubleJumpForce: 40
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 9
   groundCheck: {fileID: 93182928}
   playeranim: {fileID: 1126557507}
   controlmode: 1

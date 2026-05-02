@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ai-game-developer": {
+      "type": "stdio",
+      "args": [
+        "port=22977",
+        "plugin-timeout=10000",
+        "client-transport=stdio",
+        "authorization=none"
+      ],
+      "command": "E:/2D-Platformer-Unity-main/2D-Platformer-Unity-main/Library/mcp-server/win-x64/unity-mcp-server.exe"
+    }
+  }
+}
