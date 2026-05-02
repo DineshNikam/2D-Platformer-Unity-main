@@ -31,8 +31,8 @@ public class HorizontalChunkStreamerEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.HelpBox(
-            "Menu: Neon Runner → Chunk Streaming → Create Or Configure Streamer…\n" +
-            "Add PlatformChunk To Prefabs In Assets/Chunks (before Play if prefabs lack the component).",
+            "Start: place StartChunk in the scene and assign Start Chunk In Scene (or name it 'StartChunk'). It is not spawned or moved.\n" +
+            "Repeating: Chunk 1 + Chunk 2 prefabs. PlatformChunk: bake width if auto measure shows 0.",
             MessageType.Info);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -27,6 +28,76 @@ public static class NeonRunnerChunkStreamingSetup
         EditorSceneManager.MarkSceneDirty(streamer.gameObject.scene);
         Selection.activeGameObject = streamer.gameObject;
         Debug.Log($"Neon Runner: configured '{streamer.gameObject.name}'. Check Player and chunk prefabs in the Inspector.", streamer);
+    }
+
+    [MenuItem("Neon Runner/Camera/Add Runner Bounds Extender (CameraBounds)", false, 20)]
+    static void AddRunnerBoundsExtenderToCameraBounds()
+    {
+        GameObject boundsGo = GameObject.Find("CameraBounds");
+        if (boundsGo == null)
+        {
+            EditorUtility.DisplayDialog(
+                "Neon Runner",
+                "No GameObject named 'CameraBounds' in the active scene. Rename your Cinemachine confiner collider object or add the component manually.",
+                "OK");
+            return;
+        }
+
+        if (boundsGo.GetComponent<PolygonCollider2D>() == null)
+        {
+            EditorUtility.DisplayDialog("Neon Runner", "CameraBounds needs a PolygonCollider2D (Cinemachine Confiner shape).", "OK");
+            return;
+        }
+
+        RunnerCinemachineBoundsExtender ext = boundsGo.GetComponent<RunnerCinemachineBoundsExtender>();
+        if (ext == null)
+        {
+            Undo.RegisterCompleteObjectUndo(boundsGo, "Add RunnerCinemachineBoundsExtender");
+            ext = Undo.AddComponent<RunnerCinemachineBoundsExtender>(boundsGo);
+        }
+
+        SerializedObject so = new SerializedObject(ext);
+        Transform playerTf = FindPlayerTransform();
+        if (playerTf != null)
+            so.FindProperty("followTarget").objectReferenceValue = playerTf;
+
+        HorizontalChunkStreamer streamer = Object.FindFirstObjectByType<HorizontalChunkStreamer>();
+        if (streamer != null)
+            so.FindProperty("chunkStreamer").objectReferenceValue = streamer;
+
+        PolygonCollider2D poly = boundsGo.GetComponent<PolygonCollider2D>();
+        CinemachineConfiner2D confiner = Object.FindFirstObjectByType<CinemachineConfiner2D>();
+        if (confiner != null && confiner.m_BoundingShape2D == poly)
+            so.FindProperty("confiner").objectReferenceValue = confiner;
+
+        Camera cam = Camera.main;
+        if (cam != null && cam.orthographic)
+        {
+            float aspect = cam.pixelWidth > 0 ? (float)cam.pixelWidth / cam.pixelHeight : 16f / 9f;
+            float halfW = cam.orthographicSize * aspect;
+            so.FindProperty("rightPadding").floatValue = Mathf.Max(8f, halfW + 4f);
+        }
+
+        so.ApplyModifiedProperties();
+        EditorUtility.SetDirty(ext);
+        EditorSceneManager.MarkSceneDirty(boundsGo.scene);
+        Selection.activeGameObject = boundsGo;
+        Debug.Log("Neon Runner: RunnerCinemachineBoundsExtender added on CameraBounds (assign references if any were missing).", ext);
+    }
+
+    [MenuItem("Neon Runner/Chunk Streaming/Ensure PlatformChunk On Start + Chunk 1 + 2", false, 10)]
+    static void EnsureChunksHavePlatformComponent()
+    {
+        int added = 0;
+        foreach (string file in new[] { "StartChunk.prefab", "Chunk 1.prefab", "Chunk 2.prefab" })
+        {
+            string path = $"{DefaultChunksFolder}/{file}";
+            if (AddPlatformChunkToPrefabAssetPath(path))
+                added++;
+        }
+
+        AssetDatabase.SaveAssets();
+        Debug.Log($"Neon Runner: added PlatformChunk on {added} prefab(s) (3 paths checked). Already had component = skip.");
     }
 
     [MenuItem("Neon Runner/Chunk Streaming/Add PlatformChunk To Prefabs In Assets/Chunks", false, 11)]
@@ -69,26 +140,33 @@ public static class NeonRunnerChunkStreamingSetup
         if (playerTf != null)
             so.FindProperty("player").objectReferenceValue = playerTf;
 
-        List<GameObject> prefabs = LoadPrefabsFromFolder(DefaultChunksFolder);
-        if (prefabs.Count > 0)
+        GameObject startGo = GameObject.Find("StartChunk");
+        PlatformChunk startPc = null;
+        if (startGo != null)
+            startPc = startGo.GetComponent<PlatformChunk>() ?? startGo.GetComponentInChildren<PlatformChunk>(true);
+
+        if (startPc != null)
+            so.FindProperty("startChunkInScene").objectReferenceValue = startPc;
+        else
+            so.FindProperty("startChunkInScene").objectReferenceValue = null;
+
+        List<GameObject> repeating = LoadRepeatingChunkPrefabs();
+        SerializedProperty chunkProp = so.FindProperty("repeatingChunkPrefabs");
+        chunkProp.ClearArray();
+        for (int i = 0; i < repeating.Count; i++)
         {
-            SerializedProperty chunkProp = so.FindProperty("chunkPrefabs");
-            chunkProp.ClearArray();
-            for (int i = 0; i < prefabs.Count; i++)
-            {
-                chunkProp.InsertArrayElementAtIndex(i);
-                chunkProp.GetArrayElementAtIndex(i).objectReferenceValue = prefabs[i];
-            }
+            chunkProp.InsertArrayElementAtIndex(i);
+            chunkProp.GetArrayElementAtIndex(i).objectReferenceValue = repeating[i];
         }
 
         SerializedProperty acc = so.FindProperty("activeChunkCount");
         if (acc.intValue < 2)
-            acc.intValue = Mathf.Max(2, Mathf.Min(4, prefabs.Count > 0 ? prefabs.Count : 4));
+            acc.intValue = Mathf.Max(2, Mathf.Min(4, repeating.Count > 0 ? repeating.Count : 4));
 
         if (playerTf != null)
         {
             SerializedProperty yz = so.FindProperty("levelPositionYZ");
-            yz.vector2Value = new Vector2(playerTf.position.y, playerTf.position.z);
+            yz.vector2Value = new Vector2(0f, playerTf.position.z);
 
             SerializedProperty startX = so.FindProperty("worldStartLeftX");
             if (Mathf.Approximately(startX.floatValue, 0f))
@@ -192,6 +270,31 @@ public static class NeonRunnerChunkStreamingSetup
 
         list.Sort((a, b) => string.CompareOrdinal(a.name, b.name));
         return list;
+    }
+
+    /// <summary>Prefer Chunk 1 + Chunk 2; otherwise every prefab in the folder except StartChunk.</summary>
+    static List<GameObject> LoadRepeatingChunkPrefabs()
+    {
+        var named = new List<GameObject>();
+        foreach (string fileName in new[] { "Chunk 1.prefab", "Chunk 2.prefab" })
+        {
+            GameObject p = AssetDatabase.LoadAssetAtPath<GameObject>($"{DefaultChunksFolder}/{fileName}");
+            if (p != null)
+                named.Add(p);
+        }
+
+        if (named.Count > 0)
+            return named;
+
+        List<GameObject> all = LoadPrefabsFromFolder(DefaultChunksFolder);
+        var filtered = new List<GameObject>();
+        foreach (GameObject go in all)
+        {
+            if (go != null && go.name != "StartChunk")
+                filtered.Add(go);
+        }
+
+        return filtered;
     }
 
     static Transform FindPlayerTransform()

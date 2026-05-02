@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class pickup : MonoBehaviour
@@ -9,6 +7,27 @@ public class pickup : MonoBehaviour
     public pickupType pt;
     [SerializeField] GameObject PickupEffect;
 
+    void SpawnPickupEffectAt(Vector3 worldPos)
+    {
+        if (PickupEffect == null)
+            return;
+
+        GameObject fx = Instantiate(PickupEffect, worldPos, Quaternion.identity);
+        float destroyAfter = 3f;
+        if (fx.TryGetComponent(out ParticleSystem ps))
+        {
+            var main = ps.main;
+            destroyAfter = main.duration;
+            if (main.startLifetime.mode == ParticleSystemCurveMode.Constant)
+                destroyAfter += main.startLifetime.constant;
+            else
+                destroyAfter += main.startLifetime.constantMax;
+            destroyAfter += 0.25f;
+        }
+
+        Destroy(fx, destroyAfter);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(pt == pickupType.coin)
@@ -16,11 +35,8 @@ public class pickup : MonoBehaviour
             if(collision.gameObject.tag == "Player")
             {
                 GameManager.instance.IncrementCoinCount();
-           
-                Instantiate(PickupEffect, transform.position, Quaternion.identity);
-
+                SpawnPickupEffectAt(transform.position);
                 Destroy(this.gameObject,0.2f);
-                
             }
             
         }
@@ -30,11 +46,8 @@ public class pickup : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 GameManager.instance.IncrementGemCount();
-            
-                Instantiate(PickupEffect, transform.position, Quaternion.identity);
-
+                SpawnPickupEffectAt(transform.position);
                 Destroy(this.gameObject, 0.2f);
-
             }
 
         }
