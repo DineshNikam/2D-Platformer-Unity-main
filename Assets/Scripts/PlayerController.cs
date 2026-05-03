@@ -67,11 +67,11 @@ public class PlayerController : MonoBehaviour
     public int FacingDirection => transform.localScale.x >= 0 ? 1 : -1;
     void Awake()
     {
- #if UNITY_EDITOR
- controlmode = Controls.pc;
- #else
- controlmode = Controls.mobile;
- #endif
+//  #if UNITY_EDITOR
+//  controlmode = Controls.pc;
+//  #else
+//  controlmode = Controls.mobile;
+//  #endif
     }
 
     private void Start()
