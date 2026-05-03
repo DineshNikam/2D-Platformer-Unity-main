@@ -1,0 +1,5 @@
+Composite: Tilemap, Layer: 3, IsTrigger: False, GeometryType: Outlines
+Composite: Tilemap, Layer: 3, IsTrigger: False, GeometryType: Outlines
+Composite: Tilemap, Layer: 3, IsTrigger: False, GeometryType: Outlines
+Composite: Tilemap, Layer: 3, IsTrigger: False, GeometryType: Outlines
+Composite: Tilemap, Layer: 3, IsTrigger: False, GeometryType: Outlines

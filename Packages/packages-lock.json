@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.antigravity.ide": {
-      "version": "https://github.com/prithvi-bharadwaj/Antigravity-IDE.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "052001cf62c44b1af3d8bd6339939f5f2c34966d"
-    },
     "com.boxqkrtm.ide.cursor": {
       "version": "https://github.com/boxqkrtm/com.unity.ide.cursor.git",
       "depth": 0,
@@ -15,6 +8,13 @@
         "com.unity.test-framework": "1.1.9"
       },
       "hash": "fd8ff1fb700caf062eb5cce364c1d0a85f99ebe6"
+    },
+    "com.community.antigravity-unity": {
+      "version": "https://github.com/usmanbutt-dev/antigravity-unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a4660d9b7ad4a8e3fd2581c4003ebf79db033001"
     },
     "com.ivanmurzak.unity.mcp": {
       "version": "0.67.3",
@@ -149,6 +149,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.bindings.openimageio": {
+      "version": "1.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.collections": "1.2.4"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.28",
       "depth": 2,
@@ -190,7 +199,7 @@
     },
     "com.unity.collections": {
       "version": "2.6.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.23",
@@ -258,7 +267,7 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -268,6 +277,17 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.recorder": {
+      "version": "5.1.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.8.7",
+        "com.unity.collections": "1.2.4",
+        "com.unity.bindings.openimageio": "1.0.2"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
@@ -330,7 +350,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.2.0",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",

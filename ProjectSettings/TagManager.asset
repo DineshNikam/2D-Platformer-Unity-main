@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - killzone
   - Coin
@@ -15,7 +15,7 @@ TagManager:
   - UI
   - CameraBounds
   - 
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -64,3 +64,11 @@ TagManager:
   - name: Player
     uniqueID: 3775889879
     locked: 0
+  - name: Enemy
+    uniqueID: 1461815499
+    locked: 0
+  - name: UI
+    uniqueID: 1570265941
+    locked: 0
+  m_RenderingLayers:
+  - Default

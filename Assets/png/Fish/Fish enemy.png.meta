@@ -1,0 +1,1911 @@
+fileFormatVersion: 2
+guid: 4d0edac0bfe550942a0ff2d780849960
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3667157533522668764
+    second: Fish enemy_0
+  - first:
+      213: -3454763149379967329
+    second: Fish enemy_1
+  - first:
+      213: -6207587636201733313
+    second: Fish enemy_2
+  - first:
+      213: 7508958283583322829
+    second: Fish enemy_3
+  - first:
+      213: 8540748229802993171
+    second: Fish enemy_4
+  - first:
+      213: 7309149258388689834
+    second: Fish enemy_5
+  - first:
+      213: -6815446231409306531
+    second: Fish enemy_6
+  - first:
+      213: 7704832256971060038
+    second: Fish enemy_7
+  - first:
+      213: -4199825117752051571
+    second: Fish enemy_8
+  - first:
+      213: 7488579683899970539
+    second: Fish enemy_9
+  - first:
+      213: 723517818567768088
+    second: Fish enemy_10
+  - first:
+      213: -1327032319411647622
+    second: Fish enemy_11
+  - first:
+      213: -6774530294466522387
+    second: Fish enemy_12
+  - first:
+      213: -8025027979864566321
+    second: Fish enemy_13
+  - first:
+      213: 392607901822689809
+    second: Fish enemy_14
+  - first:
+      213: 3480755237333346567
+    second: Fish enemy_15
+  - first:
+      213: 5135483250376951533
+    second: Fish enemy_16
+  - first:
+      213: 5156938048686004894
+    second: Fish enemy_17
+  - first:
+      213: -7535721211686153456
+    second: Fish enemy_18
+  - first:
+      213: -917339439079005492
+    second: Fish enemy_19
+  - first:
+      213: 8289058149805042775
+    second: Fish enemy_20
+  - first:
+      213: -2012872545750258324
+    second: Fish enemy_21
+  - first:
+      213: 7952195959476655477
+    second: Fish enemy_22
+  - first:
+      213: 8689052565498761392
+    second: Fish enemy_23
+  - first:
+      213: -77015527971418081
+    second: Fish enemy_24
+  - first:
+      213: -948173859545240022
+    second: Fish enemy_25
+  - first:
+      213: -5818565563757493288
+    second: Fish enemy_26
+  - first:
+      213: 841895909779725413
+    second: Fish enemy_27
+  - first:
+      213: -8738309972197454733
+    second: Fish enemy_28
+  - first:
+      213: -7225367901882343298
+    second: Fish enemy_29
+  - first:
+      213: -4156845155545939116
+    second: Fish enemy_30
+  - first:
+      213: -4605324067415880434
+    second: Fish enemy_31
+  - first:
+      213: 5424720754183212549
+    second: Fish enemy_32
+  - first:
+      213: -4555065558476473707
+    second: Fish enemy_33
+  - first:
+      213: 6695370359885760614
+    second: Fish enemy_34
+  - first:
+      213: 4098679678457386652
+    second: Fish enemy_35
+  - first:
+      213: -7243247945374714634
+    second: Fish enemy_36
+  - first:
+      213: 948263399630676260
+    second: Fish enemy_37
+  - first:
+      213: 8325903166382437262
+    second: Fish enemy_38
+  - first:
+      213: -5673058497648817700
+    second: Fish enemy_39
+  - first:
+      213: 4657686920953462920
+    second: Fish enemy_40
+  - first:
+      213: -8313399745346193375
+    second: Fish enemy_41
+  - first:
+      213: 5134934248493533026
+    second: Fish enemy_42
+  - first:
+      213: -7729832464416938106
+    second: Fish enemy_43
+  - first:
+      213: -3989358105859535873
+    second: Fish enemy_44
+  - first:
+      213: 7349638522912710278
+    second: Fish enemy_45
+  - first:
+      213: -2987328702986196195
+    second: Fish enemy_46
+  - first:
+      213: -1307849270954745898
+    second: Fish enemy_47
+  - first:
+      213: -966451232966693697
+    second: Fish enemy_48
+  - first:
+      213: 2744948631022389086
+    second: Fish enemy_49
+  - first:
+      213: -9147514715525056706
+    second: Fish enemy_50
+  - first:
+      213: -5683574577473894536
+    second: Fish enemy_51
+  - first:
+      213: 5445315070386044453
+    second: Fish enemy_52
+  - first:
+      213: -2777047749911522714
+    second: Fish enemy_53
+  - first:
+      213: -2748817372084241138
+    second: Fish enemy_54
+  - first:
+      213: -6206179107802007861
+    second: Fish enemy_55
+  - first:
+      213: -4418446523549294104
+    second: Fish enemy_56
+  - first:
+      213: -4265133141177074915
+    second: Fish enemy_57
+  - first:
+      213: 9174938458986881096
+    second: Fish enemy_58
+  - first:
+      213: -5383294593998299748
+    second: Fish enemy_59
+  - first:
+      213: -1161587114728529653
+    second: Fish enemy_60
+  - first:
+      213: 6072050488397845857
+    second: Fish enemy_61
+  - first:
+      213: -1167406989095479345
+    second: Fish enemy_62
+  - first:
+      213: -1462300710511361689
+    second: Fish enemy_63
+  - first:
+      213: -2206387142536484339
+    second: Fish enemy_64
+  - first:
+      213: 1290942351490155368
+    second: Fish enemy_65
+  - first:
+      213: -5194744257376397428
+    second: Fish enemy_66
+  - first:
+      213: 2196891573239004989
+    second: Fish enemy_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fish enemy_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1189
+        width: 557
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc2409e85c54e230800000000000000
+      internalID: 3667157533522668764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_1
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1189
+        width: 556
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96e81248373e00d0800000000000000
+      internalID: -3454763149379967329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_2
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 1189
+        width: 557
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33c6102fe73ad9a0800000000000000
+      internalID: -6207587636201733313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_3
+      rect:
+        serializedVersion: 2
+        x: 2178
+        y: 1189
+        width: 556
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcaf53656cd253860800000000000000
+      internalID: 7508958283583322829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 668
+        width: 545
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3162471a345d68670800000000000000
+      internalID: 8540748229802993171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_5
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 663
+        width: 526
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3519466805f6560800000000000000
+      internalID: 7309149258388689834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_6
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 663
+        width: 541
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54d21723cbaa61a0800000000000000
+      internalID: -6815446231409306531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_7
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 652
+        width: 473
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6433bb2ad101dea60800000000000000
+      internalID: 7704832256971060038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_8
+      rect:
+        serializedVersion: 2
+        x: 2611
+        y: 737
+        width: 161
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8830a99e4937b5c0800000000000000
+      internalID: -4199825117752051571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_9
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 443
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3901bdb87cce760800000000000000
+      internalID: 7488579683899970539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_10
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 432
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818b5646f937a0a00800000000000000
+      internalID: 723517818567768088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_11
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 456
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b810ce22f659de0800000000000000
+      internalID: -1327032319411647622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_12
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 414
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2533617980cf1a0800000000000000
+      internalID: -6774530294466522387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_13
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 391
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc51a9b129f51a090800000000000000
+      internalID: -8025027979864566321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_14
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 115
+        width: 476
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112272c7ec2d27500800000000000000
+      internalID: 392607901822689809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_15
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 397
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709a55f42702e4030800000000000000
+      internalID: 3480755237333346567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_16
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 426
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6cfa8aec6e44740800000000000000
+      internalID: 5135483250376951533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_17
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 426
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a10a825df119740800000000000000
+      internalID: 5156938048686004894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_18
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 390
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0131213eb7dbb6790800000000000000
+      internalID: -7535721211686153456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_19
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 385
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc26d33f3a4f443f0800000000000000
+      internalID: -917339439079005492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_20
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 361
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75cafad4876a80370800000000000000
+      internalID: 8289058149805042775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_21
+      rect:
+        serializedVersion: 2
+        x: 2404
+        y: 367
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d6b649517d014e0800000000000000
+      internalID: -2012872545750258324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_22
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 332
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57517e4b710eb5e60800000000000000
+      internalID: 7952195959476655477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_23
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 151
+        width: 543
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b010419547b59870800000000000000
+      internalID: 8689052565498761392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_24
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 145
+        width: 514
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10131d09c26eeef0800000000000000
+      internalID: -77015527971418081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_25
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 361
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2eae7cf5e867d2f0800000000000000
+      internalID: -948173859545240022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_26
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 356
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d30ae5a27d404fa0800000000000000
+      internalID: -5818565563757493288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_27
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 338
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c56409ed30fab00800000000000000
+      internalID: 841895909779725413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_28
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 304
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ccae9b0694bb680800000000000000
+      internalID: -8738309972197454733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_29
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 302
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e702bc4cc265abb90800000000000000
+      internalID: -7225367901882343298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_30
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 314
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453816dda5bef46c0800000000000000
+      internalID: -4156845155545939116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_31
+      rect:
+        serializedVersion: 2
+        x: 2545
+        y: 298
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d8e16292a9610c0800000000000000
+      internalID: -4605324067415880434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_32
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 292
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e87c6d8ca784b40800000000000000
+      internalID: 5424720754183212549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_33
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 291
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ab462220829c0c0800000000000000
+      internalID: -4555065558476473707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_34
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 286
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6688ba46edbbaec50800000000000000
+      internalID: 6695370359885760614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_35
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 279
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96909aa37f61e830800000000000000
+      internalID: 4098679678457386652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_36
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 292
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4bcdbbe50da7b90800000000000000
+      internalID: -7243247945374714634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_37
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 261
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 421ad70b988e82d00800000000000000
+      internalID: 948263399630676260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_38
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 267
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83768a31dc8b8370800000000000000
+      internalID: 8325903166382437262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_39
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 267
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd981a18a5f3541b0800000000000000
+      internalID: -5673058497648817700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_40
+      rect:
+        serializedVersion: 2
+        x: 2312
+        y: 268
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8800a6eb39d63a040800000000000000
+      internalID: 4657686920953462920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_41
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 220
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12831d65afed0ac80800000000000000
+      internalID: -8313399745346193375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_42
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 245
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267c1723e73f24740800000000000000
+      internalID: 5134934248493533026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_43
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 215
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6876529f35e1ab490800000000000000
+      internalID: -7729832464416938106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_44
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 220
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbca6270f3f2a8c0800000000000000
+      internalID: -3989358105859535873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_45
+      rect:
+        serializedVersion: 2
+        x: 2504
+        y: 168
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e1db9eb492ff560800000000000000
+      internalID: 7349638522912710278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_46
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 186
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1bed274f50ea86d0800000000000000
+      internalID: -2987328702986196195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_47
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 197
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df1df0740699dde0800000000000000
+      internalID: -1307849270954745898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_48
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 197
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc284e59b97692f0800000000000000
+      internalID: -966451232966693697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_49
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 185
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57c8ce8c34081620800000000000000
+      internalID: 2744948631022389086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_50
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 169
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e377873f4df7d0180800000000000000
+      internalID: -9147514715525056706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_51
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 144
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8774a3fd803ef11b0800000000000000
+      internalID: -5683574577473894536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_52
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 174
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ef07cb435a19b40800000000000000
+      internalID: 5445315070386044453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_53
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 137
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662d93ee8c1f579d0800000000000000
+      internalID: -2777047749911522714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_54
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 150
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0dfe78f92d3ad9d0800000000000000
+      internalID: -2748817372084241138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_55
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 115
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc6b203bbf83fd9a0800000000000000
+      internalID: -6206179107802007861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_56
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 129
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1e8c8fb468ea2c0800000000000000
+      internalID: -4418446523549294104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_57
+      rect:
+        serializedVersion: 2
+        x: 2478
+        y: 144
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1bf46871043fc4c0800000000000000
+      internalID: -4265133141177074915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_58
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 150
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840abf3eaede35f70800000000000000
+      internalID: 9174938458986881096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_59
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 63
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d5373b612ba45b0800000000000000
+      internalID: -5383294593998299748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_60
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 107
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b016fea6ca631efe0800000000000000
+      internalID: -1161587114728529653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_61
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 102
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165d0338fb1444450800000000000000
+      internalID: 6072050488397845857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_62
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 104
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7d7a257898ccfe0800000000000000
+      internalID: -1167406989095479345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_63
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 114
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7614b2b504dd4bbe0800000000000000
+      internalID: -1462300710511361689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_64
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 67
+        width: 31
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0aaf1475965161e0800000000000000
+      internalID: -2206387142536484339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_65
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 103
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863041e9a395ae110800000000000000
+      internalID: 1290942351490155368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_66
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 61
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c875410fe9f88e7b0800000000000000
+      internalID: -5194744257376397428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish enemy_67
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 50
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3fb5f80f3dec7e10800000000000000
+      internalID: 2196891573239004989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fish enemy_0: 3667157533522668764
+      Fish enemy_1: -3454763149379967329
+      Fish enemy_10: 723517818567768088
+      Fish enemy_11: -1327032319411647622
+      Fish enemy_12: -6774530294466522387
+      Fish enemy_13: -8025027979864566321
+      Fish enemy_14: 392607901822689809
+      Fish enemy_15: 3480755237333346567
+      Fish enemy_16: 5135483250376951533
+      Fish enemy_17: 5156938048686004894
+      Fish enemy_18: -7535721211686153456
+      Fish enemy_19: -917339439079005492
+      Fish enemy_2: -6207587636201733313
+      Fish enemy_20: 8289058149805042775
+      Fish enemy_21: -2012872545750258324
+      Fish enemy_22: 7952195959476655477
+      Fish enemy_23: 8689052565498761392
+      Fish enemy_24: -77015527971418081
+      Fish enemy_25: -948173859545240022
+      Fish enemy_26: -5818565563757493288
+      Fish enemy_27: 841895909779725413
+      Fish enemy_28: -8738309972197454733
+      Fish enemy_29: -7225367901882343298
+      Fish enemy_3: 7508958283583322829
+      Fish enemy_30: -4156845155545939116
+      Fish enemy_31: -4605324067415880434
+      Fish enemy_32: 5424720754183212549
+      Fish enemy_33: -4555065558476473707
+      Fish enemy_34: 6695370359885760614
+      Fish enemy_35: 4098679678457386652
+      Fish enemy_36: -7243247945374714634
+      Fish enemy_37: 948263399630676260
+      Fish enemy_38: 8325903166382437262
+      Fish enemy_39: -5673058497648817700
+      Fish enemy_4: 8540748229802993171
+      Fish enemy_40: 4657686920953462920
+      Fish enemy_41: -8313399745346193375
+      Fish enemy_42: 5134934248493533026
+      Fish enemy_43: -7729832464416938106
+      Fish enemy_44: -3989358105859535873
+      Fish enemy_45: 7349638522912710278
+      Fish enemy_46: -2987328702986196195
+      Fish enemy_47: -1307849270954745898
+      Fish enemy_48: -966451232966693697
+      Fish enemy_49: 2744948631022389086
+      Fish enemy_5: 7309149258388689834
+      Fish enemy_50: -9147514715525056706
+      Fish enemy_51: -5683574577473894536
+      Fish enemy_52: 5445315070386044453
+      Fish enemy_53: -2777047749911522714
+      Fish enemy_54: -2748817372084241138
+      Fish enemy_55: -6206179107802007861
+      Fish enemy_56: -4418446523549294104
+      Fish enemy_57: -4265133141177074915
+      Fish enemy_58: 9174938458986881096
+      Fish enemy_59: -5383294593998299748
+      Fish enemy_6: -6815446231409306531
+      Fish enemy_60: -1161587114728529653
+      Fish enemy_61: 6072050488397845857
+      Fish enemy_62: -1167406989095479345
+      Fish enemy_63: -1462300710511361689
+      Fish enemy_64: -2206387142536484339
+      Fish enemy_65: 1290942351490155368
+      Fish enemy_66: -5194744257376397428
+      Fish enemy_67: 2196891573239004989
+      Fish enemy_7: 7704832256971060038
+      Fish enemy_8: -4199825117752051571
+      Fish enemy_9: 7488579683899970539
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,6 +6,7 @@ public class pickup : MonoBehaviour
 
     public pickupType pt;
     [SerializeField] GameObject PickupEffect;
+    [SerializeField] AudioClip pickupSFX;
 
     void SpawnPickupEffectAt(Vector3 worldPos)
     {
@@ -35,8 +36,9 @@ public class pickup : MonoBehaviour
             if(collision.gameObject.tag == "Player")
             {
                 GameManager.instance.IncrementCoinCount();
+                if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(pickupSFX);
                 SpawnPickupEffectAt(transform.position);
-                Destroy(this.gameObject,0.2f);
+                Destroy(gameObject, 0.2f);
             }
             
         }
@@ -46,6 +48,7 @@ public class pickup : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 GameManager.instance.IncrementGemCount();
+                if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(pickupSFX);
                 SpawnPickupEffectAt(transform.position);
                 Destroy(this.gameObject, 0.2f);
             }
@@ -60,6 +63,7 @@ public class pickup : MonoBehaviour
                     ?? collision.GetComponentInParent<Health>();
                 if (hp != null)
                     hp.Heal(1f);
+                if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(pickupSFX);
                 SpawnPickupEffectAt(transform.position);
                 Destroy(gameObject, 0.2f);
             }

@@ -1,0 +1,8 @@
+Bullet (Layer 0) Collision Matrix:
+Layer 0 vs 0 (Default): COLLIDES
+Layer 0 vs 1 (TransparentFX): COLLIDES
+Layer 0 vs 2 (Ignore Raycast): COLLIDES
+Layer 0 vs 3 (ground): COLLIDES
+Layer 0 vs 4 (Water): COLLIDES
+Layer 0 vs 5 (UI): COLLIDES
+Layer 0 vs 6 (CameraBounds): IGNORED

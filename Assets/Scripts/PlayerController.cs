@@ -8,8 +8,6 @@ public enum Controls { mobile,pc}
 
 public class PlayerController : MonoBehaviour
 {
-
-
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public float doubleJumpForce = 8f;
@@ -25,13 +23,28 @@ public class PlayerController : MonoBehaviour
     /// <summary>While vertical speed is below this, floor collision can restore jump charges (avoids resetting while moving up through a corner).</summary>
     [SerializeField] float jumpResetMaxUpVelocity = 0.35f;
 
+    [Header("Coyote Time & Jump Buffer (GDD §3.3)")]
+    [Tooltip("Forgiveness window (seconds) after walking off an edge where jump is still allowed.")]
+    [SerializeField] float coyoteTime = 0.12f;
+
+    [Tooltip("Pre-input window (seconds): if jump is pressed this long before landing, it fires on contact.")]
+    [SerializeField] float jumpBufferTime = 0.15f;
+
     private Rigidbody2D rb;
     private bool isGroundedBool = false;
     private bool wasGroundedLastFrame;
     /// <summary>2 after a real landing / standing on floor; decrements per jump. Refill is driven by ground + velocity / floor contacts.</summary>
     private int jumpsRemaining;
 
+    float _coyoteTimer;
+    float _jumpBufferTimer;
+
     public Animator playeranim;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip doubleJumpSFX;
+    [SerializeField] private AudioClip landSFX;
 
     bool _animHasRun;
     bool _animHasIsGrounded;
@@ -48,15 +61,9 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem ImpactEffect;
     private bool wasonGround;
 
-
-   // public GameObject projectile;
-   // public Transform firePoint;
-
-    public float fireRate = 0.5f; // Time between each shot
-    private float nextFireTime = 0f; // Time of the next allowed shot
-
-
-
+    // ─── Facing Direction (GDD §3.4) ────────────────────────────
+    /// <summary>+1 (right) or -1 (left). Driven by last non-zero horizontal input / sprite flip.</summary>
+    public int FacingDirection => transform.localScale.x >= 0 ? 1 : -1;
 
     private void Start()
     {
@@ -83,89 +90,71 @@ public class PlayerController : MonoBehaviour
             AnimatorControllerParameter p = playeranim.GetParameter(i);
             if (p.type != AnimatorControllerParameterType.Bool)
                 continue;
-            if (p.name == "run")
-                _animHasRun = true;
-            else if (p.name == "isGrounded")
-                _animHasIsGrounded = true;
+
+            if (p.name == "run") _animHasRun = true;
+            if (p.name == "isGrounded") _animHasIsGrounded = true;
         }
     }
 
     private void Update()
     {
+        if (isPaused) return;
+
         isGroundedBool = IsGrounded();
-
-        // Refill when we become grounded this frame (air → ground) — good for clean landings.
-        if (isGroundedBool && !wasGroundedLastFrame)
+        
+        if (isGroundedBool && rb.linearVelocity.y <= jumpResetMaxUpVelocity)
+        {
             jumpsRemaining = 2;
-
-        wasGroundedLastFrame = isGroundedBool;
-
-        if (controlmode == Controls.pc)
+            _coyoteTimer = coyoteTime;
+        }
+        else
         {
-            moveX = Input.GetAxis("Horizontal");
-            if (Input.GetButtonDown("Jump"))
-                TryConsumeJump();
+            _coyoteTimer -= Time.deltaTime;
         }
 
-        if (!isPaused)
+        if (isGroundedBool && !wasonGround)
         {
-            // Calculate rotation angle based on mouse position
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 lookDirection = mousePosition - transform.position;
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-
-            // ... (your existing code for rotation)
-
-            // Handle shooting
-            if (controlmode == Controls.pc && Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
-            {
-                Shoot();
-                nextFireTime = Time.time + 1f / fireRate; // Set the next allowed fire time
-            }
-        }
-        SetAnimations();
-
-        if (moveX != 0)
-        {
-            FlipSprite(moveX);
-        }
-
-        //impactEffect
-
-        if(!wasonGround && isGroundedBool)
-        {
-            ImpactEffect.gameObject.SetActive(true);
-            ImpactEffect.Stop();
-            ImpactEffect.transform.position = new Vector2(footsteps.transform.position.x,footsteps.transform.position.y-0.2f);
-            ImpactEffect.Play();
+            if (ImpactEffect != null)
+                ImpactEffect.Play();
         }
 
         wasonGround = isGroundedBool;
 
-        
-    }
-    public void SetAnimations()
-    {
-        if (playeranim == null)
-            return;
-
-        if (_animHasRun)
+        if (moveX != 0)
         {
-            if (moveX != 0 && isGroundedBool)
-            {
+            if (_animHasRun)
                 playeranim.SetBool("run", true);
-                footEmissions.rateOverTime = 35f;
-            }
-            else
-            {
-                playeranim.SetBool("run", false);
-                footEmissions.rateOverTime = 0f;
-            }
+
+            FlipSprite(moveX);
+            footEmissions.rateOverTime = 35f;
         }
         else
         {
-            footEmissions.rateOverTime = moveX != 0 && isGroundedBool ? 35f : 0f;
+            if (_animHasRun)
+                playeranim.SetBool("run", false);
+
+            footEmissions.rateOverTime = 0f;
         }
+
+        if (controlmode == Controls.pc)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                _jumpBufferTimer = jumpBufferTime;
+            }
+        }
+
+        _jumpBufferTimer -= Time.deltaTime;
+
+        if (_jumpBufferTimer > 0f)
+        {
+            if (TryConsumeJump())
+            {
+                _jumpBufferTimer = 0f;
+            }
+        }
+
+        wasGroundedLastFrame = isGroundedBool;
 
         if (_animHasIsGrounded)
             playeranim.SetBool("isGrounded", isGroundedBool);
@@ -175,134 +164,121 @@ public class PlayerController : MonoBehaviour
     {
         if (direction > 0)
         {
-            // Moving right, flip sprite to the right
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if (direction < 0)
         {
-            // Moving left, flip sprite to the left
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+
     private void FixedUpdate()
     {
-        // Player movement
+        if (isPaused)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            return;
+        }
+
         if (controlmode == Controls.pc)
         {
             moveX = Input.GetAxis("Horizontal");
         }
-       
-
-
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
     }
 
-    private void Jump(float force)
+    /// <summary>Disables movement input and stops current horizontal movement.</summary>
+    public void DisableInput()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Zero out vertical velocity
+        isPaused = true;
+        moveX = 0;
+        if (rb != null)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
+        footEmissions.rateOverTime = 0f;
+    }
+
+    private void Jump(float force, bool isDoubleJump = false)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         if (playeranim != null)
             playeranim.SetTrigger("jump");
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(isDoubleJump ? doubleJumpSFX : jumpSFX);
     }
 
-    void TryConsumeJump()
+    bool TryConsumeJump()
     {
-        if (jumpsRemaining <= 0)
-            return;
-
-        if (jumpsRemaining == 2)
+        if (jumpsRemaining == 2 && !isGroundedBool && _coyoteTimer > 0f)
+        {
             Jump(jumpForce);
-        else
-            Jump(doubleJumpForce);
+            jumpsRemaining = 1;
+            _coyoteTimer = 0f;
+            return true;
+        }
 
-        jumpsRemaining--;
+        if (isGroundedBool)
+        {
+            Jump(jumpForce);
+            jumpsRemaining = 1;
+            _coyoteTimer = 0f;
+            return true;
+        }
+
+        if (jumpsRemaining > 0)
+        {
+            Jump(doubleJumpForce, true);
+            jumpsRemaining--;
+            _coyoteTimer = 0f;
+            return true;
+        }
+
+        return false;
     }
 
-    /// <summary>Ray + overlap: more reliable with tilemaps and moving chunk colliders than a short ray alone.</summary>
     bool IsGrounded()
     {
         if (groundCheck == null)
             return false;
 
         Vector2 feet = groundCheck.position;
-        if (Physics2D.OverlapCircle(feet, groundCheckRadius, groundLayer))
-            return true;
+        Collider2D[] cols = Physics2D.OverlapBoxAll(feet, new Vector2(groundCheckRadius * 2, 0.05f), 0f, groundLayer);
+        foreach (var c in cols)
+        {
+            if (c.gameObject != gameObject) return true;
+        }
 
         Vector2 rayOrigin = new Vector2(feet.x, feet.y - 0.05f);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundRayLength, groundLayer);
-        return hit.collider != null;
-    }
-
-    /// <summary>If the ray misses but we are standing on a floor collider (common after chunk recycling), restore jumps.</summary>
-    void TryRefillJumpsFromFloorCollision(Collision2D collision)
-    {
-        if (!IsInGroundMask(collision.gameObject.layer))
-            return;
-
-        if (rb.linearVelocity.y > jumpResetMaxUpVelocity)
-            return;
-
-        for (int i = 0; i < collision.contactCount; i++)
+        RaycastHit2D[] hits = Physics2D.RaycastAll(rayOrigin, Vector2.down, groundRayLength, groundLayer);
+        foreach (var h in hits)
         {
-            ContactPoint2D c = collision.GetContact(i);
-            if (c.normal.y > 0.45f)
-            {
-                jumpsRemaining = 2;
-                return;
-            }
+            if (h.collider != null && h.collider.gameObject != gameObject) return true;
         }
+        
+        return false;
     }
 
-    static bool IsInGroundMask(int layer, LayerMask mask)
-    {
-        return (mask.value & (1 << layer)) != 0;
-    }
-
-    bool IsInGroundMask(int layer) => IsInGroundMask(layer, groundLayer);
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "killzone")
         {
             GameManager.instance.Death();
-            return;
         }
-
-        TryRefillJumpsFromFloorCollision(collision);
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("killzone"))
-            return;
-        TryRefillJumpsFromFloorCollision(collision);
-    }
-
-
-
-    //mobile;
     public void MobileMove(float value)
     {
         moveX = value;
     }
     public void MobileJump()
     {
-        TryConsumeJump();
+        _jumpBufferTimer = jumpBufferTime;
     }
 
-    public void Shoot()
-    {
-        //GameObject fireBall = Instantiate(projectile, firePoint.position, Quaternion.identity);
-        //fireBall.GetComponent<Rigidbody2D>().AddForce(firePoint.right * 500f);
-    }
+    [System.Obsolete("Use ShootingSystem for auto-fire.")]
+    public void Shoot() { }
 
-    public void MobileShoot()
-    {
-        if (Time.time >= nextFireTime)
-        {
-            Shoot();
-            nextFireTime = Time.time + 1f / fireRate; // Set the next allowed fire time
-        }
-    }
-
+    [System.Obsolete("Use ShootingSystem for auto-fire.")]
+    public void MobileShoot() { }
 }

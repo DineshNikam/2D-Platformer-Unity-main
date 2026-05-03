@@ -1,0 +1,264 @@
+Frame 1 | Pos: (11.24, -1.08, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.08, 0.00)
+Frame 1 | FLIPPED! movingRight is now False
+Frame 2 | Pos: (11.30, -1.08, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.08, 0.00)
+Frame 2 | FLIPPED! movingRight is now True
+Frame 3 | Pos: (11.24, -1.09, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.09, 0.00)
+Frame 3 | FLIPPED! movingRight is now False
+Frame 3 | Pos: (11.30, -1.10, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.10, 0.00)
+Frame 3 | FLIPPED! movingRight is now True
+Frame 3 | Pos: (11.24, -1.12, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.12, 0.00)
+Frame 3 | FLIPPED! movingRight is now False
+Frame 3 | Pos: (11.30, -1.14, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.14, 0.00)
+Frame 3 | FLIPPED! movingRight is now True
+Frame 4 | Pos: (11.24, -1.16, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.16, 0.00)
+Frame 4 | FLIPPED! movingRight is now False
+Frame 4 | Pos: (11.30, -1.19, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.19, 0.00)
+Frame 4 | FLIPPED! movingRight is now True
+Frame 4 | Pos: (11.24, -1.22, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.22, 0.00)
+Frame 4 | FLIPPED! movingRight is now False
+Frame 6 | Pos: (11.30, -1.26, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.26, 0.00)
+Frame 6 | FLIPPED! movingRight is now True
+Frame 7 | Pos: (11.24, -1.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.30, 0.00)
+Frame 7 | FLIPPED! movingRight is now False
+Frame 8 | Pos: (11.30, -1.34, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.34, 0.00)
+Frame 8 | FLIPPED! movingRight is now True
+Frame 9 | Pos: (11.24, -1.39, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.39, 0.00)
+Frame 9 | FLIPPED! movingRight is now False
+Frame 10 | Pos: (11.30, -1.44, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.44, 0.00)
+Frame 10 | FLIPPED! movingRight is now True
+Frame 11 | Pos: (11.24, -1.49, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.49, 0.00)
+Frame 11 | FLIPPED! movingRight is now False
+Frame 12 | Pos: (11.30, -1.55, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.55, 0.00)
+Frame 12 | FLIPPED! movingRight is now True
+Frame 14 | Pos: (11.24, -1.61, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.61, 0.00)
+Frame 14 | FLIPPED! movingRight is now False
+Frame 15 | Pos: (11.30, -1.68, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.68, 0.00)
+Frame 15 | FLIPPED! movingRight is now True
+Frame 16 | Pos: (11.24, -1.75, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.75, 0.00)
+Frame 16 | FLIPPED! movingRight is now False
+Frame 17 | Pos: (11.30, -1.83, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.83, 0.00)
+Frame 17 | FLIPPED! movingRight is now True
+Frame 19 | Pos: (11.24, -1.90, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -1.90, 0.00)
+Frame 19 | FLIPPED! movingRight is now False
+Frame 19 | Pos: (11.30, -1.99, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -1.99, 0.00)
+Frame 19 | FLIPPED! movingRight is now True
+Frame 20 | Pos: (11.24, -2.07, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -2.07, 0.00)
+Frame 20 | FLIPPED! movingRight is now False
+Frame 22 | Pos: (11.30, -2.16, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -2.16, 0.00)
+Frame 22 | FLIPPED! movingRight is now True
+Frame 23 | Pos: (11.24, -2.26, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.49, -2.26, 0.00)
+Frame 23 | FLIPPED! movingRight is now False
+Frame 24 | Pos: (11.30, -2.36, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.05, -2.36, 0.00)
+Frame 24 | FLIPPED! movingRight is now True
+Frame 25 | Pos: (11.28, -2.32, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.32, 0.00)
+Frame 25 | FLIPPED! movingRight is now False
+Frame 26 | Pos: (11.34, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.31, 0.00)
+Frame 26 | FLIPPED! movingRight is now True
+Frame 27 | Pos: (11.28, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.31, 0.00)
+Frame 27 | FLIPPED! movingRight is now False
+Frame 29 | Pos: (11.34, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.31, 0.00)
+Frame 29 | FLIPPED! movingRight is now True
+Frame 29 | Pos: (11.28, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.31, 0.00)
+Frame 29 | FLIPPED! movingRight is now False
+Frame 31 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 31 | FLIPPED! movingRight is now True
+Frame 32 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 32 | FLIPPED! movingRight is now False
+Frame 33 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 33 | FLIPPED! movingRight is now True
+Frame 34 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 34 | FLIPPED! movingRight is now False
+Frame 35 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 35 | FLIPPED! movingRight is now True
+Frame 37 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 37 | FLIPPED! movingRight is now False
+Frame 37 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 37 | FLIPPED! movingRight is now True
+Frame 39 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 39 | FLIPPED! movingRight is now False
+Frame 40 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 40 | FLIPPED! movingRight is now True
+Frame 41 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 41 | FLIPPED! movingRight is now False
+Frame 43 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 43 | FLIPPED! movingRight is now True
+Frame 44 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 44 | FLIPPED! movingRight is now False
+Frame 45 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 45 | FLIPPED! movingRight is now True
+Frame 46 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 46 | FLIPPED! movingRight is now False
+Frame 46 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 46 | FLIPPED! movingRight is now True
+Frame 48 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 48 | FLIPPED! movingRight is now False
+Frame 50 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 50 | FLIPPED! movingRight is now True
+Frame 51 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 51 | FLIPPED! movingRight is now False
+Frame 52 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 52 | FLIPPED! movingRight is now True
+Frame 53 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 53 | FLIPPED! movingRight is now False
+Frame 54 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 54 | FLIPPED! movingRight is now True
+Frame 55 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 55 | FLIPPED! movingRight is now False
+Frame 56 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 56 | FLIPPED! movingRight is now True
+Frame 58 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 58 | FLIPPED! movingRight is now False
+Frame 59 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 59 | FLIPPED! movingRight is now True
+Frame 60 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 60 | FLIPPED! movingRight is now False
+Frame 61 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 61 | FLIPPED! movingRight is now True
+Frame 63 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 63 | FLIPPED! movingRight is now False
+Frame 64 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 64 | FLIPPED! movingRight is now True
+Frame 65 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 65 | FLIPPED! movingRight is now False
+Frame 66 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 66 | FLIPPED! movingRight is now True
+Frame 67 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 67 | FLIPPED! movingRight is now False
+Frame 68 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 68 | FLIPPED! movingRight is now True
+Frame 69 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.53, -2.30, 0.00)
+Frame 69 | FLIPPED! movingRight is now False
+Frame 71 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (11.09, -2.30, 0.00)
+Frame 71 | FLIPPED! movingRight is now True
+Frame 1 | Pos: (11.24, -1.08, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -0.81, 0.00)
+Frame 1 | FLIPPED! movingRight is now False
+Frame 2 | Pos: (11.30, -1.08, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -0.81, 0.00)
+Frame 2 | FLIPPED! movingRight is now True
+Frame 3 | Pos: (11.24, -1.09, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -0.82, 0.00)
+Frame 3 | FLIPPED! movingRight is now False
+Frame 3 | Pos: (11.30, -1.10, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -0.83, 0.00)
+Frame 3 | FLIPPED! movingRight is now True
+Frame 3 | Pos: (11.24, -1.12, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -0.84, 0.00)
+Frame 3 | FLIPPED! movingRight is now False
+Frame 4 | Pos: (11.30, -1.14, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -0.86, 0.00)
+Frame 4 | FLIPPED! movingRight is now True
+Frame 6 | Pos: (11.24, -1.16, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -0.89, 0.00)
+Frame 6 | FLIPPED! movingRight is now False
+Frame 7 | Pos: (11.30, -1.19, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -0.91, 0.00)
+Frame 7 | FLIPPED! movingRight is now True
+Frame 8 | Pos: (11.24, -1.22, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -0.95, 0.00)
+Frame 8 | FLIPPED! movingRight is now False
+Frame 9 | Pos: (11.30, -1.26, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -0.98, 0.00)
+Frame 9 | FLIPPED! movingRight is now True
+Frame 10 | Pos: (11.24, -1.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.02, 0.00)
+Frame 10 | FLIPPED! movingRight is now False
+Frame 12 | Pos: (11.30, -1.34, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.06, 0.00)
+Frame 12 | FLIPPED! movingRight is now True
+Frame 13 | Pos: (11.24, -1.39, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.11, 0.00)
+Frame 13 | FLIPPED! movingRight is now False
+Frame 14 | Pos: (11.30, -1.44, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.16, 0.00)
+Frame 14 | FLIPPED! movingRight is now True
+Frame 15 | Pos: (11.24, -1.49, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.22, 0.00)
+Frame 15 | FLIPPED! movingRight is now False
+Frame 17 | Pos: (11.30, -1.55, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.28, 0.00)
+Frame 17 | FLIPPED! movingRight is now True
+Frame 18 | Pos: (11.24, -1.61, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.34, 0.00)
+Frame 18 | FLIPPED! movingRight is now False
+Frame 19 | Pos: (11.30, -1.68, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.41, 0.00)
+Frame 19 | FLIPPED! movingRight is now True
+Frame 20 | Pos: (11.24, -1.75, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.48, 0.00)
+Frame 20 | FLIPPED! movingRight is now False
+Frame 21 | Pos: (11.30, -1.83, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.55, 0.00)
+Frame 21 | FLIPPED! movingRight is now True
+Frame 23 | Pos: (11.24, -1.90, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.63, 0.00)
+Frame 23 | FLIPPED! movingRight is now False
+Frame 24 | Pos: (11.30, -1.99, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.71, 0.00)
+Frame 24 | FLIPPED! movingRight is now True
+Frame 25 | Pos: (11.24, -2.07, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.80, 0.00)
+Frame 25 | FLIPPED! movingRight is now False
+Frame 26 | Pos: (11.30, -2.16, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -1.89, 0.00)
+Frame 26 | FLIPPED! movingRight is now True
+Frame 27 | Pos: (11.24, -2.26, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.68, -1.98, 0.00)
+Frame 27 | FLIPPED! movingRight is now False
+Frame 29 | Pos: (11.30, -2.36, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.86, -2.08, 0.00)
+Frame 29 | FLIPPED! movingRight is now True
+Frame 30 | Pos: (11.28, -2.32, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.04, 0.00)
+Frame 30 | FLIPPED! movingRight is now False
+Frame 31 | Pos: (11.34, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 31 | FLIPPED! movingRight is now True
+Frame 32 | Pos: (11.28, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 32 | FLIPPED! movingRight is now False
+Frame 33 | Pos: (11.34, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 33 | FLIPPED! movingRight is now True
+Frame 35 | Pos: (11.28, -2.31, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 35 | FLIPPED! movingRight is now False
+Frame 36 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 36 | FLIPPED! movingRight is now True
+Frame 37 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 37 | FLIPPED! movingRight is now False
+Frame 38 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 38 | FLIPPED! movingRight is now True
+Frame 39 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 39 | FLIPPED! movingRight is now False
+Frame 41 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 41 | FLIPPED! movingRight is now True
+Frame 42 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 42 | FLIPPED! movingRight is now False
+Frame 43 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 43 | FLIPPED! movingRight is now True
+Frame 44 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 44 | FLIPPED! movingRight is now False
+Frame 45 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 45 | FLIPPED! movingRight is now True
+Frame 47 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 47 | FLIPPED! movingRight is now False
+Frame 48 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 48 | FLIPPED! movingRight is now True
+Frame 49 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 49 | FLIPPED! movingRight is now False
+Frame 50 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 50 | FLIPPED! movingRight is now True
+Frame 51 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 51 | FLIPPED! movingRight is now False
+Frame 53 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 53 | FLIPPED! movingRight is now True
+Frame 54 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 54 | FLIPPED! movingRight is now False
+Frame 55 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 55 | FLIPPED! movingRight is now True
+Frame 56 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 56 | FLIPPED! movingRight is now False
+Frame 57 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 57 | FLIPPED! movingRight is now True
+Frame 59 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 59 | FLIPPED! movingRight is now False
+Frame 60 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 60 | FLIPPED! movingRight is now True
+Frame 61 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 61 | FLIPPED! movingRight is now False
+Frame 62 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 62 | FLIPPED! movingRight is now True
+Frame 63 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 63 | FLIPPED! movingRight is now False
+Frame 65 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 65 | FLIPPED! movingRight is now True
+Frame 66 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 66 | FLIPPED! movingRight is now False
+Frame 67 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 67 | FLIPPED! movingRight is now True
+Frame 68 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 68 | FLIPPED! movingRight is now False
+Frame 69 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 69 | FLIPPED! movingRight is now True
+Frame 71 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 71 | FLIPPED! movingRight is now False
+Frame 72 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 72 | FLIPPED! movingRight is now True
+Frame 73 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 73 | FLIPPED! movingRight is now False
+Frame 74 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 74 | FLIPPED! movingRight is now True
+Frame 75 | Pos: (11.28, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (12.72, -2.03, 0.00)
+Frame 75 | FLIPPED! movingRight is now False
+Frame 77 | Pos: (11.34, -2.30, 0.00) | GroundHit: NULL | WallHit: NULL | GroundStart: (0.00, 0.00, 0.00) | WallStart: (9.90, -2.03, 0.00)
+Frame 77 | FLIPPED! movingRight is now True

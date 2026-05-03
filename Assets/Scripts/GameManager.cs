@@ -43,7 +43,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGUI();
-        UIManager.instance.fadeFromBlack = true;
+        if (UIManager.instance != null)
+        {
+            UIManager.instance.fadeFromBlack = true;
+        }
         playerPosition = playerController.transform.position;
 
         FindTotalPickups();
@@ -85,19 +88,25 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameOver)
         {
-            // Disable Mobile Controls
-            UIManager.instance.DisableMobileControls();
-            // Initiate screen fade
-            UIManager.instance.fadeToBlack = true;
-
-            // Disable the player object
-            playerController.gameObject.SetActive(false);
-
-            // Start death coroutine to wait and then respawn the player
-            StartCoroutine(DeathCoroutine());
-
-            // Update game state
             isGameOver = true;
+
+            if (UIManager.instance != null)
+            {
+                // Disable Mobile Controls
+                UIManager.instance.DisableMobileControls();
+                // Initiate screen fade
+                UIManager.instance.fadeToBlack = true;
+            }
+
+            // Disable player input instead of hiding the object immediately
+            // This allows the death animation and game feel to play out
+            if (playerController != null)
+            {
+                playerController.DisableInput();
+            }
+
+            // Start death coroutine to wait and then show the menu
+            StartCoroutine(DeathCoroutine());
 
             // Log death message
             Debug.Log("Died");
@@ -107,7 +116,7 @@ public class GameManager : MonoBehaviour
     public void FindTotalPickups()
     {
 
-        pickup[] pickups = GameObject.FindObjectsOfType<pickup>();
+        pickup[] pickups = Object.FindObjectsByType<pickup>(FindObjectsSortMode.None);
 
         foreach (pickup pickupObject in pickups)
         {
@@ -137,19 +146,17 @@ public class GameManager : MonoBehaviour
    
     public IEnumerator DeathCoroutine()
     {
-        yield return new WaitForSeconds(1f);
-        playerController.transform.position = playerPosition;
-
-        // Wait for 2 seconds
-        yield return new WaitForSeconds(1f);
-
-        // Check if the game is still over (in case player respawns earlier)
-        if (isGameOver)
+        // Wait for player to see death animation/UI
+        yield return new WaitForSeconds(1.5f);
+        
+        // Show Game Over / Pause menu after the delay
+        if (GameplayUIManager.Instance != null)
         {
-            SceneManager.LoadScene(1);
-
-            
+            GameplayUIManager.Instance.ShowPauseMenu(true);
         }
+
+        // We no longer reload the scene automatically; 
+        // the user interacts with the UI buttons.
     }
 
 }

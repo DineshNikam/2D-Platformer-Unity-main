@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: e22d5f9709c330f498bd6590b4616e4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2961783056128501205
+    second: mine blast_0
+  - first:
+      213: -6757217973816286095
+    second: mine blast_1
+  - first:
+      213: -4163929112870513556
+    second: mine blast_2
+  - first:
+      213: 2255528863698994214
+    second: mine blast_3
+  - first:
+      213: 4728511312143518526
+    second: mine blast_4
+  - first:
+      213: -1948077487167227809
+    second: mine blast_5
+  - first:
+      213: 6284003477368391667
+    second: mine blast_6
+  - first:
+      213: 7294303219528099249
+    second: mine blast_7
+  - first:
+      213: -7029615850202796154
+    second: mine blast_8
+  - first:
+      213: -3321297474066094555
+    second: mine blast_9
+  - first:
+      213: -2872641734293053207
+    second: mine blast_10
+  - first:
+      213: -5327153117473958815
+    second: mine blast_11
+  - first:
+      213: 1585549059542793646
+    second: mine blast_12
+  - first:
+      213: 1537172875165975712
+    second: mine blast_13
+  - first:
+      213: 480221468924127585
+    second: mine blast_14
+  - first:
+      213: -2182831652120871691
+    second: mine blast_15
+  - first:
+      213: 5056527965455151120
+    second: mine blast_16
+  - first:
+      213: -2684368622457792507
+    second: mine blast_17
+  - first:
+      213: 1179421313015291348
+    second: mine blast_18
+  - first:
+      213: -4879748609856186433
+    second: mine blast_19
+  - first:
+      213: -505900321478423370
+    second: mine blast_20
+  - first:
+      213: -8496794594844536087
+    second: mine blast_21
+  - first:
+      213: 4159498201841251256
+    second: mine blast_22
+  - first:
+      213: -4929946633398995224
+    second: mine blast_23
+  - first:
+      213: 3345288489012201918
+    second: mine blast_24
+  - first:
+      213: -8716244191600976981
+    second: mine blast_25
+  - first:
+      213: 5978970650172630758
+    second: mine blast_26
+  - first:
+      213: 2994959494318304504
+    second: mine blast_27
+  - first:
+      213: -492202806929602752
+    second: mine blast_28
+  - first:
+      213: -4968787075676964636
+    second: mine blast_29
+  - first:
+      213: -6954368725298875718
+    second: mine blast_30
+  - first:
+      213: 7166864111740668180
+    second: mine blast_31
+  - first:
+      213: -8467450983477524512
+    second: mine blast_32
+  - first:
+      213: -6156795789695811226
+    second: mine blast_33
+  - first:
+      213: -4032564530840139262
+    second: mine blast_34
+  - first:
+      213: 5073241249736679222
+    second: mine blast_35
+  - first:
+      213: 1420121417372318084
+    second: mine blast_36
+  - first:
+      213: -4544077502149543632
+    second: mine blast_37
+  - first:
+      213: 5399377741683131431
+    second: mine blast_38
+  - first:
+      213: 2759985906778076259
+    second: mine blast_39
+  - first:
+      213: -6781492754511297448
+    second: mine blast_40
+  - first:
+      213: -670692597312435225
+    second: mine blast_41
+  - first:
+      213: 3170734801601850092
+    second: mine blast_42
+  - first:
+      213: 2271446767636790979
+    second: mine blast_43
+  - first:
+      213: -8618653248258566348
+    second: mine blast_44
+  - first:
+      213: -6360666106519187011
+    second: mine blast_45
+  - first:
+      213: -2139400838381596288
+    second: mine blast_46
+  - first:
+      213: 6920197253125452126
+    second: mine blast_47
+  - first:
+      213: 539231449207893786
+    second: mine blast_48
+  - first:
+      213: 7272948676238785844
+    second: mine blast_49
+  - first:
+      213: -3508286536869202756
+    second: mine blast_50
+  - first:
+      213: 5335848801131422811
+    second: mine blast_51
+  - first:
+      213: 6735905030568458027
+    second: mine blast_52
+  - first:
+      213: 4340802595972807028
+    second: mine blast_53
+  - first:
+      213: -5555673450179438807
+    second: mine blast_54
+  - first:
+      213: -6967888709273345579
+    second: mine blast_55
+  - first:
+      213: 1219582244400166215
+    second: mine blast_56
+  - first:
+      213: 1827590418716807279
+    second: mine blast_57
+  - first:
+      213: 3504442065944183287
+    second: mine blast_58
+  - first:
+      213: 3739207733597615303
+    second: mine blast_59
+  - first:
+      213: 5591410441997101365
+    second: mine blast_60
+  - first:
+      213: 7158240241757614021
+    second: mine blast_61
+  - first:
+      213: 6634982480143329903
+    second: mine blast_62
+  - first:
+      213: -7747348985366171402
+    second: mine blast_63
+  - first:
+      213: -4333565751609195996
+    second: mine blast_64
+  - first:
+      213: 7227536450436737801
+    second: mine blast_65
+  - first:
+      213: -3417251406263363765
+    second: mine blast_66
+  - first:
+      213: 7570480822405283994
+    second: mine blast_67
+  - first:
+      213: 4867788860394500320
+    second: mine blast_68
+  - first:
+      213: 7719214320683693705
+    second: mine blast_69
+  - first:
+      213: -8760613529399881119
+    second: mine blast_70
+  - first:
+      213: -4061892107877695960
+    second: mine blast_71
+  - first:
+      213: 2443291385266885174
+    second: mine blast_72
+  - first:
+      213: 4325578274300887062
+    second: mine blast_73
+  - first:
+      213: 5913926207846516246
+    second: mine blast_74
+  - first:
+      213: 3215427751523941629
+    second: mine blast_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mine blast_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 770
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a90bda002a5e6d0800000000000000
+      internalID: -2961783056128501205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_1
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 753
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174abc8dd0a8932a0800000000000000
+      internalID: -6757217973816286095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_2
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 771
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6412758880c636c0800000000000000
+      internalID: -4163929112870513556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_3
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 790
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6244b6d1d8f3d4f10800000000000000
+      internalID: 2255528863698994214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 128
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b0bb45cfb0f9140800000000000000
+      internalID: 4728511312143518526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_5
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 131
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f583676c8d907f4e0800000000000000
+      internalID: -1948077487167227809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_6
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 163
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7ccdb5ed3453750800000000000000
+      internalID: 6284003477368391667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_7
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 146
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b5e5fb91229a3560800000000000000
+      internalID: 7294303219528099249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mine blast_8
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 1096
+        width: 44
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7add85515339746ba2c8350567b2ef
+      internalID: -7029615850202796154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b72ccb4da75d7ef49aed3355d92dff27
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":600.0,"y":600.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      mine blast_0: -2961783056128501205
+      mine blast_1: -6757217973816286095
+      mine blast_2: -4163929112870513556
+      mine blast_3: 2255528863698994214
+      mine blast_4: 4728511312143518526
+      mine blast_5: -1948077487167227809
+      mine blast_6: 6284003477368391667
+      mine blast_7: 7294303219528099249
+      mine blast_8: -7029615850202796154
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

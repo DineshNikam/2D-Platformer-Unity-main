@@ -1,0 +1,15 @@
+Collider: KillZone, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: killzone
+Collider: KillZone, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: killzone
+Collider: KillZone, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: killzone
+Collider: CrabEnemy, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: Untagged
+Collider: CrabEnemy, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: Untagged
+Collider: KillZone, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: killzone
+Collider: KillZone, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: killzone
+Collider: CrabEnemy, Type: BoxCollider2D, Layer: 0, IsTrigger: False, Tag: Untagged
+Collider: Player, Type: CapsuleCollider2D, Layer: 0, IsTrigger: False, Tag: Player
+Collider: Bullet(Clone), Type: CircleCollider2D, Layer: 0, IsTrigger: True, Tag: Untagged
+Collider: Bullet(Clone), Type: CircleCollider2D, Layer: 0, IsTrigger: True, Tag: Untagged
+Collider: Bullet(Clone), Type: CircleCollider2D, Layer: 0, IsTrigger: True, Tag: Untagged
+Collider: Bullet(Clone), Type: CircleCollider2D, Layer: 0, IsTrigger: True, Tag: Untagged
+Collider: Bullet(Clone), Type: CircleCollider2D, Layer: 0, IsTrigger: True, Tag: Untagged
+Collider: CameraBounds, Type: PolygonCollider2D, Layer: 6, IsTrigger: True, Tag: Untagged

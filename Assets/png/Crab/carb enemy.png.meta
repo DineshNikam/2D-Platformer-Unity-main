@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 16a38dc41e99f7c40870637eb5b42213
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1605591574926116944
+    second: carb enemy_0
+  - first:
+      213: -150126598831991625
+    second: carb enemy_1
+  - first:
+      213: -2804783483714069198
+    second: carb enemy_2
+  - first:
+      213: -1343445929739599107
+    second: carb enemy_3
+  - first:
+      213: -1572455058150064484
+    second: carb enemy_4
+  - first:
+      213: 6950125199427007679
+    second: carb enemy_5
+  - first:
+      213: 9068685163005744488
+    second: carb enemy_6
+  - first:
+      213: -5448602250276836547
+    second: carb enemy_7
+  - first:
+      213: 8861046306596885551
+    second: carb enemy_8
+  - first:
+      213: -2880093225321589001
+    second: carb enemy_9
+  - first:
+      213: -5891499703942638337
+    second: carb enemy_10
+  - first:
+      213: -8968582986536341088
+    second: carb enemy_11
+  - first:
+      213: -4961927050507843786
+    second: carb enemy_12
+  - first:
+      213: 3216765877339697768
+    second: carb enemy_13
+  - first:
+      213: -7710417231483945176
+    second: carb enemy_14
+  - first:
+      213: -6683233149781297175
+    second: carb enemy_15
+  - first:
+      213: -2228378570087945067
+    second: carb enemy_16
+  - first:
+      213: -8557450143780321212
+    second: carb enemy_17
+  - first:
+      213: 6947092860577034879
+    second: carb enemy_18
+  - first:
+      213: 2283525632652749540
+    second: carb enemy_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: carb enemy_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1177
+        width: 605
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b73b2a28fac7b9e0800000000000000
+      internalID: -1605591574926116944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_1
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1178
+        width: 606
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4184d57a4aaedf0800000000000000
+      internalID: -150126598831991625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_2
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1178
+        width: 619
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d175d28486319d0800000000000000
+      internalID: -2804783483714069198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_3
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 1178
+        width: 629
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df24de67b0f1b5de0800000000000000
+      internalID: -1343445929739599107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 802
+        width: 593
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ef2b1b4748d2ae0800000000000000
+      internalID: -1572455058150064484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_5
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 802
+        width: 660
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb47658ab0ec37060800000000000000
+      internalID: 6950125199427007679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_6
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 802
+        width: 605
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86510d89b117add70800000000000000
+      internalID: 9068685163005744488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 410
+        width: 607
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3beadd0f1da264b0800000000000000
+      internalID: -5448602250276836547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_8
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 409
+        width: 758
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f249ef20ba2c8fa70800000000000000
+      internalID: 8861046306596885551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_9
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 409
+        width: 723
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f692b0987ad708d0800000000000000
+      internalID: -2880093225321589001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_10
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 381
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff41e28db303d3ea0800000000000000
+      internalID: -5891499703942638337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 39
+        width: 618
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1b3e49a41398380800000000000000
+      internalID: -8968582986536341088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 39
+        width: 613
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637041113a1b32bb0800000000000000
+      internalID: -4961927050507843786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_13
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 11
+        width: 645
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8623e64b58f34ac20800000000000000
+      internalID: 3216765877339697768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_14
+      rect:
+        serializedVersion: 2
+        x: 2426
+        y: 333
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f395721681ff490800000000000000
+      internalID: -7710417231483945176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_15
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 328
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7bb2c0cd26043a0800000000000000
+      internalID: -6683233149781297175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_16
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 39
+        width: 554
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ca0d83f753311e0800000000000000
+      internalID: -2228378570087945067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_17
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 34
+        width: 59
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448cbdcfe64dd3980800000000000000
+      internalID: -8557450143780321212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_18
+      rect:
+        serializedVersion: 2
+        x: 2788
+        y: 70
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72b8504628096060800000000000000
+      internalID: 6947092860577034879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carb enemy_19
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 5
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea24c9d676b0bf10800000000000000
+      internalID: 2283525632652749540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      carb enemy_0: -1605591574926116944
+      carb enemy_1: -150126598831991625
+      carb enemy_10: -5891499703942638337
+      carb enemy_11: -8968582986536341088
+      carb enemy_12: -4961927050507843786
+      carb enemy_13: 3216765877339697768
+      carb enemy_14: -7710417231483945176
+      carb enemy_15: -6683233149781297175
+      carb enemy_16: -2228378570087945067
+      carb enemy_17: -8557450143780321212
+      carb enemy_18: 6947092860577034879
+      carb enemy_19: 2283525632652749540
+      carb enemy_2: -2804783483714069198
+      carb enemy_3: -1343445929739599107
+      carb enemy_4: -1572455058150064484
+      carb enemy_5: 6950125199427007679
+      carb enemy_6: 9068685163005744488
+      carb enemy_7: -5448602250276836547
+      carb enemy_8: 8861046306596885551
+      carb enemy_9: -2880093225321589001
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

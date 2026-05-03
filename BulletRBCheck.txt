@@ -1,0 +1,1 @@
+BodyType: Kinematic, CollisionDetection: Continuous

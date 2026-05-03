@@ -1,0 +1,2 @@
+groundMask value: 9
+Layers: Default (0), ground (3), 

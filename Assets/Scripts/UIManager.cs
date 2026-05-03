@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
     private void FadeScreen(float targetAlpha)
     {
         Color currentColor = blackScreen.color;
-        float newAlpha = Mathf.MoveTowards(currentColor.a, targetAlpha, fadeSpeed * Time.deltaTime);
+        float newAlpha = Mathf.MoveTowards(currentColor.a, targetAlpha, fadeSpeed * Time.unscaledDeltaTime);
         blackScreen.color = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
     }
 }

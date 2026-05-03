@@ -58,7 +58,10 @@ public class HorizontalChunkStreamer : MonoBehaviour
         _pool.Clear();
 
         if (startChunkInScene != null)
+        {
             startChunkInScene.ResolveWidth();
+            startChunkInScene.SpawnEnemies();
+        }
 
         for (int i = 0; i < activeChunkCount; i++)
         {
@@ -124,6 +127,8 @@ public class HorizontalChunkStreamer : MonoBehaviour
                 break;
 
             SetChunkWorldCenter(leftPool, targetCenter);
+            leftPool.ClearEnemies();
+            leftPool.SpawnEnemies();
         }
 
         // Recycle segments that are too far ahead when the player moves left (can't place before scene start).
@@ -200,6 +205,8 @@ public class HorizontalChunkStreamer : MonoBehaviour
                 break;
 
             SetChunkWorldCenter(rightPool, newCenterX);
+            rightPool.ClearEnemies();
+            rightPool.SpawnEnemies();
         }
     }
 
@@ -220,6 +227,7 @@ public class HorizontalChunkStreamer : MonoBehaviour
             float w = pc.Width;
             float cx = cursor + w * 0.5f;
             SetChunkWorldCenter(pc, cx);
+            pc.SpawnEnemies();
             cursor += w;
         }
     }

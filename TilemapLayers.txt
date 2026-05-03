@@ -1,0 +1,3 @@
+Tilemap: Layer=0 (Default) Collider=False
+Tilemap: Layer=3 (ground) Collider=True
+BackGroundTileMap: Layer=0 (Default) Collider=False

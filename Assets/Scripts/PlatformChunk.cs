@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Enemies;
 
 /// <summary>
 /// Attach to the root of each platform chunk (scene or prefab). Set <see cref="chunkWidth"/> for a manual span,
@@ -170,5 +171,21 @@ public class PlatformChunk : MonoBehaviour
         centerOffsetX = mid - transform.position.x;
         width = maxX - minX;
         return width > 0.0001f;
+    }
+
+    public void SpawnEnemies()
+    {
+        if (EnemySpawner.Instance != null)
+        {
+            EnemySpawner.Instance.SpawnEnemiesInChunk(this);
+        }
+    }
+
+    public void ClearEnemies()
+    {
+        if (EnemySpawner.Instance != null)
+        {
+            EnemySpawner.Instance.ClearEnemiesInChunk(this);
+        }
     }
 }

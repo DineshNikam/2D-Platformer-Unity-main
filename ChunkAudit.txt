@@ -1,0 +1,18 @@
+Chunk: Chunk 1
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
+Chunk: Chunk 2
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
+Chunk: Chunk 3
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
+Chunk: Chunk4
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
+Chunk: Chunk5
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
+Chunk: StartChunk
+  - Tilemap: Layer=3 (ground) Collider=True
+  - BackGroundTileMap: Layer=0 (Default) Collider=False
