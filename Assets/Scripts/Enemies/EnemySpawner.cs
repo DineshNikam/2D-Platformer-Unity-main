@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Enemies
 {
@@ -43,27 +42,39 @@ namespace Enemies
         public void SpawnEnemiesInChunk(PlatformChunk chunk)
         {
             Debug.Log($"[Spawner] SpawnEnemiesInChunk called for {chunk.name}");
+            int cap = chunk.MaxEnemySpawns;
+            int spawned = 0;
+
             EnemySpawnPoint[] spawnPoints = chunk.GetComponentsInChildren<EnemySpawnPoint>();
-            
+
             foreach (var sp in spawnPoints)
             {
-                if (Random.value > globalSpawnChance) continue;
+                if (cap >= 0 && spawned >= cap)
+                    break;
+
+                float chance = globalSpawnChance * Mathf.Clamp01(sp.spawnProbability);
+                if (Random.value > chance)
+                    continue;
 
                 if (IsSpawnSafe(sp.transform.position))
                 {
-                    SpawnEnemy(sp.type, sp.transform.position, chunk.transform);
+                    if (SpawnEnemy(sp.type, sp.transform.position, chunk.transform))
+                        spawned++;
                 }
             }
 
-            // Also try to spawn some enemies "awarely" in empty spaces
-            if (Random.value < 0.7f) // Increased to 70% for testing/debugging
-            {
-                SpawnEnemyAwarely(EnemyType.Random, chunk);
-            }
+            if (cap >= 0 && spawned >= cap)
+                return;
+
+            if (Random.value < 0.7f)
+                SpawnEnemyAwarely(EnemyType.Random, chunk, cap, ref spawned);
         }
 
-        public void SpawnEnemyAwarely(EnemyType type, PlatformChunk chunk)
+        void SpawnEnemyAwarely(EnemyType type, PlatformChunk chunk, int maxForChunk, ref int spawned)
         {
+            if (maxForChunk >= 0 && spawned >= maxForChunk)
+                return;
+
             float leftX = chunk.GetLeftX();
             float rightX = chunk.GetRightX();
             float xPos = Random.Range(leftX, rightX);
@@ -83,7 +94,8 @@ namespace Enemies
                 if (IsSpawnSafe(spawnPos))
                 {
                     Debug.Log($"[Spawner] Aware spawn successful in {chunk.name} at {spawnPos} on {groundHit.collider.name}");
-                    SpawnEnemy(type, spawnPos, chunk.transform);
+                    if (SpawnEnemy(type, spawnPos, chunk.transform))
+                        spawned++;
                 }
                 else
                 {
@@ -103,7 +115,7 @@ namespace Enemies
             return hit == null;
         }
 
-        private void SpawnEnemy(EnemyType type, Vector3 position, Transform parent)
+        bool SpawnEnemy(EnemyType type, Vector3 position, Transform parent)
         {
             GameObject prefabToSpawn = null;
 
@@ -126,10 +138,11 @@ namespace Enemies
                     break;
             }
 
-            if (prefabToSpawn != null)
-            {
-                Instantiate(prefabToSpawn, position, Quaternion.identity, parent);
-            }
+            if (prefabToSpawn == null)
+                return false;
+
+            Instantiate(prefabToSpawn, position, Quaternion.identity, parent);
+            return true;
         }
 
         public void ClearEnemiesInChunk(PlatformChunk chunk)

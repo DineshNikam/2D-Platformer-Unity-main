@@ -66,10 +66,14 @@ public static class NeonRunnerMenuBloomSetup
 
         var profile = EnsureVolumeProfileWithBloom(DefaultVolumeProfilePath, report);
 
-        EnsureGlobalVolume(menuScene, profile, report);
+        Volume menuBloomVolume = EnsureGlobalVolume(menuScene, profile, report);
 
         if (!EnsureTitleTmpBloomGlow(menuScene, report, out var titleTmp))
             return;
+
+        Canvas menuCanvas = FindFirstCanvas(menuScene);
+        if (menuCanvas != null && menuBloomVolume != null && titleTmp != null)
+            EnsureMenuBloomRuntimeController(menuCanvas.gameObject, menuCanvas, menuBloomVolume, titleTmp, report);
 
         EditorSceneManager.MarkSceneDirty(menuScene);
 
@@ -327,13 +331,13 @@ public static class NeonRunnerMenuBloomSetup
         bloom.active = true;
 
         bloom.threshold.overrideState = true;
-        bloom.threshold.value = 0.75f;
+        bloom.threshold.value = 0.35f;
 
         bloom.intensity.overrideState = true;
-        bloom.intensity.value = 0.65f;
+        bloom.intensity.value = 1f;
 
         bloom.scatter.overrideState = true;
-        bloom.scatter.value = 0.85f;
+        bloom.scatter.value = 0.92f;
 
         bloom.tint.overrideState = true;
         bloom.tint.value = Color.white;
@@ -353,7 +357,7 @@ public static class NeonRunnerMenuBloomSetup
         return bloom != null;
     }
 
-    static void EnsureGlobalVolume(Scene scene, VolumeProfile profile, List<string> report)
+    static Volume EnsureGlobalVolume(Scene scene, VolumeProfile profile, List<string> report)
     {
         var existing = SceneVolumeByName(scene, VolumeObjectName);
         Volume volume;
@@ -386,6 +390,41 @@ public static class NeonRunnerMenuBloomSetup
 
         EditorUtility.SetDirty(volume);
         EditorUtility.SetDirty(volumeGo);
+        return volume;
+    }
+
+    static void EnsureMenuBloomRuntimeController(
+        GameObject canvasRoot,
+        Canvas canvasRef,
+        Volume volume,
+        TMP_Text titleTmp,
+        List<string> report)
+    {
+        if (canvasRoot.GetComponent<NeonRunnerMenuTitleBloomController>() == null)
+            Undo.AddComponent<NeonRunnerMenuTitleBloomController>(canvasRoot);
+
+        var ctl = canvasRoot.GetComponent<NeonRunnerMenuTitleBloomController>();
+        if (ctl == null)
+        {
+            report.Add("Bloom controller: NeonRunnerMenuTitleBloomController missing after AddComponent.");
+            return;
+        }
+
+        Undo.RecordObject(ctl, "Wire NeonRunnerMenuTitleBloomController");
+        SerializedObject serialized = new SerializedObject(ctl);
+        SetObjectReference(serialized, "targetCanvas", canvasRef);
+        SetObjectReference(serialized, "titleText", titleTmp);
+        SetObjectReference(serialized, "bloomVolume", volume);
+        serialized.ApplyModifiedProperties();
+        EditorUtility.SetDirty(ctl);
+        report.Add("Canvas: NeonRunnerMenuTitleBloomController added / rewired.");
+    }
+
+    static void SetObjectReference(SerializedObject so, string propertyName, UnityEngine.Object value)
+    {
+        SerializedProperty prop = so.FindProperty(propertyName);
+        if (prop != null)
+            prop.objectReferenceValue = value;
     }
 
     static void AssignVolumeProfile(Volume volume, VolumeProfile profile)

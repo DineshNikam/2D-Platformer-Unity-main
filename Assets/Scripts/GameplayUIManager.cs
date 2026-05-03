@@ -147,8 +147,14 @@ public class GameplayUIManager : MonoBehaviour
 
     public void ShowSettings()
     {
+        if (settingsPanel == null)
+        {
+            ShowPauseMenu();
+            return;
+        }
+
         CloseAllPanels();
-        if (settingsPanel) settingsPanel.SetActive(true);
+        settingsPanel.SetActive(true);
     }
 
     public void ShowQuitConfirmation()

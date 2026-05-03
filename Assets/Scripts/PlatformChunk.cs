@@ -18,7 +18,13 @@ public class PlatformChunk : MonoBehaviour
     [Tooltip("World width along X. If 0, width is the union of measured children (colliders + renderers + tilemaps). Ignored when both edge anchors are set.")]
     [SerializeField] float chunkWidth;
 
+    [Tooltip("Max enemies spawned when this chunk runs SpawnEnemies (authored points + aware spawns). Use -1 for no limit.")]
+    [SerializeField] int maxEnemySpawns = -1;
+
     public float Width { get; private set; }
+
+    /// <summary>-1 means unlimited; otherwise caps enemies per <see cref="SpawnEnemies"/> call.</summary>
+    public int MaxEnemySpawns => maxEnemySpawns;
 
     /// <summary>World X offset from transform.position to the measured/manual horizontal center.</summary>
     float _centerOffsetX;

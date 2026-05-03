@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
+
+    [Header("Clips (assign in Inspector)")]
+    [Tooltip("Looped on the Menu (build index 0) whenever that scene loads.")]
+    [SerializeField] private AudioClip menuMusicClip;
 
     [Header("Default Volumes")]
     [Range(0f, 1f)] public float musicVolume = 0.5f;
@@ -27,11 +31,31 @@ public class AudioManager : MonoBehaviour
             if (sfxSource == null) sfxSource = CreateAudioSource("SFXSource", false);
             
             LoadSettings();
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            TryPlayMenuMusicForBuildIndex(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        TryPlayMenuMusicForBuildIndex(scene.buildIndex);
+    }
+
+    /// <summary>Build index 0 is the first scene in File → Build Settings (your Menu).</summary>
+    private void TryPlayMenuMusicForBuildIndex(int buildIndex)
+    {
+        if (buildIndex != 0 || menuMusicClip == null) return;
+        PlayMusic(menuMusicClip);
     }
 
     private AudioSource CreateAudioSource(string name, bool loop)
@@ -81,6 +105,7 @@ public class AudioManager : MonoBehaviour
         musicVolume = Mathf.Clamp01(volume);
         if (musicSource != null) musicSource.volume = musicVolume;
         PlayerPrefs.SetFloat(MUSIC_KEY, musicVolume);
+        PlayerPrefs.Save();
     }
 
     public void SetSFXVolume(float volume)
@@ -88,5 +113,6 @@ public class AudioManager : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
         PlayerPrefs.SetFloat(SFX_KEY, sfxVolume);
+        PlayerPrefs.Save();
     }
 }
