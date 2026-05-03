@@ -28,42 +28,19 @@ public class Mine : MonoBehaviour
 
         if (age > delayBeforeActive)
         {
-            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
             
-            // Log everything detected if anything is detected
-            if (cols.Length > 0)
+            // Check for explosion
+            if (colliders.Length > 0)
             {
-                string detectedList = "";
-                foreach (var c in cols) detectedList += c.name + " (" + c.tag + "), ";
-                Debug.Log($"[Mine] {gameObject.name} at {transform.position} detected: {detectedList}");
-            }
-            
-            foreach (var col in cols)
-            {
-                if (col.CompareTag("Player"))
+                foreach (var col in colliders)
                 {
-                    Debug.Log($"[Mine] Player detected by {gameObject.name}!");
-                    if (col.TryGetComponent<PlayerBrain>(out var player))
+                    if (col.CompareTag("Player"))
                     {
-                        Debug.Log($"[Mine] Calling ApplyDamage({damage}) on PlayerBrain.");
-                        player.ApplyDamage(damage);
+                        Debug.Log($"[Mine] Player {col.name} triggered mine at {transform.position}");
+                        Detonate();
+                        break;
                     }
-                    else
-                    {
-                        // Try to find in parent in case collider is on a child
-                        var parentBrain = col.GetComponentInParent<PlayerBrain>();
-                        if (parentBrain != null)
-                        {
-                            Debug.Log($"[Mine] Calling ApplyDamage({damage}) on PlayerBrain (found in parent).");
-                            parentBrain.ApplyDamage(damage);
-                        }
-                        else
-                        {
-                            Debug.LogWarning($"[Mine] Detected object tagged 'Player' but it has no PlayerBrain component!", col.gameObject);
-                        }
-                    }
-                    Detonate();
-                    break;
                 }
             }
         }
@@ -73,6 +50,19 @@ public class Mine : MonoBehaviour
     {
         if (isDetonated) return;
         isDetonated = true;
+
+        // Deal damage in radius
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius * 1.5f);
+        foreach (var hit in hits)
+        {
+            var brain = hit.GetComponent<PlayerBrain>();
+            if (brain == null) brain = hit.GetComponentInParent<PlayerBrain>();
+            if (brain != null)
+            {
+                Debug.Log($"[Mine] Damaging {hit.name} for {damage}");
+                brain.ApplyDamage((int)damage);
+            }
+        }
 
         if (TryGetComponent<SpriteRenderer>(out var sr)) sr.enabled = false;
         if (TryGetComponent<Collider2D>(out var col)) col.enabled = false;

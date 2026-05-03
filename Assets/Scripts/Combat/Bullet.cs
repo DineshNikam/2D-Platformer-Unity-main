@@ -20,6 +20,11 @@ public class Bullet : MonoBehaviour
     [Tooltip("Radius of the AoE explosion when isBlast is true (GDD §6.2 Blast Bullets).")]
     [SerializeField] float aoeRadius = 2f;
 
+    [Header("Visuals")]
+    [SerializeField] SpriteRenderer rootRenderer;
+    [SerializeField] GameObject blastVisual;
+    [SerializeField] float blastDuration = 0.35f;
+
     float _speed;
     float _damage;
     int _direction;    // +1 right, -1 left
@@ -35,7 +40,6 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// Configure and launch the bullet. Called by <see cref="ShootingSystem"/> each shot.
     /// </summary>
-
     public void Init(int direction, float damage, bool isBlast, float speed = 0f)
     {
         _direction = direction;
@@ -45,27 +49,29 @@ public class Bullet : MonoBehaviour
         _timer     = lifetime; // Reset timer BEFORE activation
         _isReturning = false;
         
+        if (rootRenderer != null) rootRenderer.enabled = true;
+        if (blastVisual != null) blastVisual.SetActive(false);
+        
         gameObject.SetActive(true);
-
-        System.IO.File.AppendAllText("BulletDebugLog.txt", 
-            $"[{System.DateTime.Now:HH:mm:ss.fff}] Bullet Init: dir={_direction}, speed={_speed}, damage={_damage}, blast={isBlast}, pos={transform.position}\n");
     }
 
     void Update()
     {
-        if (_isReturning) return;
+        if (_isReturning)
+        {
+            _timer -= Time.deltaTime;
+            if (_timer <= 0) ReturnToPool();
+            return;
+        }
 
         float frameDist = _speed * Time.deltaTime;
         Vector2 direction = Vector2.right * _direction;
         
         // Cast ahead to see if we hit something this frame
-        // Using 0.2f radius (slightly smaller than collider) for the cast to be safe
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.2f, direction, frameDist, groundMask | aoeDamageableMask);
         
-        // Only process the hit if it's NOT the player
         if (hit.collider != null && !hit.collider.CompareTag("Player"))
         {
-            // Process hit logic immediately
             ProcessHit(hit.collider);
             return;
         }
@@ -75,8 +81,6 @@ public class Bullet : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
-            System.IO.File.AppendAllText("BulletDebugLog.txt", 
-                $"[{System.DateTime.Now:HH:mm:ss.fff}] Bullet Lifetime Expired at {transform.position}\n");
             ReturnToPool();
         }
     }
@@ -91,22 +95,26 @@ public class Bullet : MonoBehaviour
         if (_isReturning) return;
         if (col.CompareTag("Player")) return;
 
-        Vector3 hitPos = transform.position;
-        string hitInfo = $"[{System.DateTime.Now:HH:mm:ss.fff}] Bullet Hit: {col.name} (Layer {col.gameObject.layer}) at {hitPos}";
-        
+        bool hitSomething = false;
         if (col.TryGetComponent<IDamageable>(out var target))
         {
-            _isReturning = true;
             target.TakeDamage(_damage);
-
-            if (_isBlast) DoAoE();
-            ReturnToPool();
+            hitSomething = true;
         }
         else if (((1 << col.gameObject.layer) & groundMask.value) != 0)
         {
+            hitSomething = true;
+        }
+
+        if (hitSomething)
+        {
             _isReturning = true;
+            _timer = blastDuration; // Repurpose timer for blast duration
+            
+            if (rootRenderer != null) rootRenderer.enabled = false;
+            if (blastVisual != null) blastVisual.SetActive(true);
+
             if (_isBlast) DoAoE();
-            ReturnToPool();
         }
     }
 

@@ -60,7 +60,7 @@ public class GameplayUIManager : MonoBehaviour
                 UpdateHP(Mathf.CeilToInt(brain.Health.CurrentHp), Mathf.CeilToInt(brain.Health.MaxHp));
                 brain.Health.Damaged += (amt, remaining) => UpdateHP(Mathf.CeilToInt(remaining), Mathf.CeilToInt(brain.Health.MaxHp));
             }
-            brain.OnDied += () => ShowPauseMenu(true); // Show pause/game over panel on death, disabling resume
+            // brain.OnDied += () => ShowPauseMenu(true); // Removed: GameManager now handles this with a delay
         }
 
         if (ScoreManager.Instance != null)

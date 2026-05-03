@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     bool _animHasRun;
     bool _animHasIsGrounded;
+    bool _animHasDie;
 
     public Controls controlmode;
    
@@ -88,11 +89,9 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < playeranim.parameterCount; i++)
         {
             AnimatorControllerParameter p = playeranim.GetParameter(i);
-            if (p.type != AnimatorControllerParameterType.Bool)
-                continue;
-
-            if (p.name == "run") _animHasRun = true;
-            if (p.name == "isGrounded") _animHasIsGrounded = true;
+            if (p.name == "run" && p.type == AnimatorControllerParameterType.Bool) _animHasRun = true;
+            if (p.name == "isGrounded" && p.type == AnimatorControllerParameterType.Bool) _animHasIsGrounded = true;
+            if (p.name == "die" && p.type == AnimatorControllerParameterType.Trigger) _animHasDie = true;
         }
     }
 
@@ -190,6 +189,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>Disables movement input and stops current horizontal movement.</summary>
     public void DisableInput()
     {
+        System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] DisableInput() called. Current isPaused: {isPaused}\n");
         isPaused = true;
         moveX = 0;
         if (rb != null)
@@ -197,6 +197,23 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
         footEmissions.rateOverTime = 0f;
+
+        if (playeranim != null)
+        {
+            System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] Triggering 'die'. _animHasDie: {_animHasDie}, playeranim.enabled: {playeranim.enabled}\n");
+            if (_animHasDie)
+            {
+                playeranim.SetTrigger("die");
+            }
+            else
+            {
+                System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] WARNING: _animHasDie is FALSE!\n");
+            }
+        }
+        else
+        {
+            System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] ERROR: playeranim is NULL!\n");
+        }
     }
 
     private void Jump(float force, bool isDoubleJump = false)

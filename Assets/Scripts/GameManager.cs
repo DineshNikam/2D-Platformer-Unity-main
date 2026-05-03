@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
+        System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] GameManager.Death() called. isGameOver: {isGameOver}\n");
         if (!isGameOver)
         {
             isGameOver = true;

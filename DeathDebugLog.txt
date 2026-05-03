@@ -1,0 +1,14 @@
+[21:49:47.719] DisableInput() called. Current isPaused: False
+[21:49:47.720] Triggering 'die'. _animHasDie: False, playeranim.enabled: True
+[21:49:47.721] WARNING: _animHasDie is FALSE!
+[21:53:20.967] GameManager.Death() called. isGameOver: False
+[21:53:20.967] DisableInput() called. Current isPaused: False
+[21:53:20.967] Triggering 'die'. _animHasDie: False, playeranim.enabled: True
+[21:53:20.969] WARNING: _animHasDie is FALSE!
+[21:54:02.743] GameManager.Death() called. isGameOver: False
+[21:54:02.743] DisableInput() called. Current isPaused: False
+[21:54:02.743] Triggering 'die'. _animHasDie: False, playeranim.enabled: True
+[21:54:02.745] WARNING: _animHasDie is FALSE!
+[22:06:18.546] GameManager.Death() called. isGameOver: False
+[22:06:18.550] DisableInput() called. Current isPaused: False
+[22:06:18.550] Triggering 'die'. _animHasDie: True, playeranim.enabled: True

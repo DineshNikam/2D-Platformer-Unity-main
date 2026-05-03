@@ -5177,7 +5177,7 @@ GameObject:
   - component: {fileID: 98940990}
   - component: {fileID: 98940992}
   - component: {fileID: 98940991}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5446,7 +5446,7 @@ GameObject:
   - component: {fileID: 181939040}
   - component: {fileID: 181939039}
   - component: {fileID: 181939038}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5566,7 +5566,7 @@ GameObject:
   - component: {fileID: 200518370}
   - component: {fileID: 200518372}
   - component: {fileID: 200518371}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5645,7 +5645,7 @@ GameObject:
   - component: {fileID: 235881659}
   - component: {fileID: 235881661}
   - component: {fileID: 235881660}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5892,13 +5892,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1437941066443662, guid: 774aea3f022cb644a8b1df1f6e59de15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254301225}
   m_SourcePrefab: {fileID: 100100000, guid: 774aea3f022cb644a8b1df1f6e59de15, type: 3}
 --- !u!1 &254301220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1437941066443662, guid: 774aea3f022cb644a8b1df1f6e59de15, type: 3}
   m_PrefabInstance: {fileID: 254301219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &254301225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254301220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57ab7aca69c59348a4c4914e9de00dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsScreen
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
 --- !u!1001 &347877817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6633,6 +6650,7 @@ MonoBehaviour:
   emptyHeartSprite: {fileID: 21300000, guid: 13d50f1d23d576b4aaaa0a2b204fccad, type: 3}
   powerUpIcon: {fileID: 0}
   powerUpFillBar: {fileID: 0}
+  buttonClickSFX: {fileID: 0}
 --- !u!4 &524245930
 Transform:
   m_ObjectHideFlags: 0
@@ -6865,7 +6883,7 @@ GameObject:
   - component: {fileID: 603967475}
   - component: {fileID: 603967477}
   - component: {fileID: 603967476}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7066,6 +7084,9 @@ MonoBehaviour:
   coyoteTime: 0.12
   jumpBufferTime: 0.15
   playeranim: {fileID: 1126557507}
+  jumpSFX: {fileID: 0}
+  doubleJumpSFX: {fileID: 0}
+  landSFX: {fileID: 0}
   controlmode: 1
   isPaused: 0
   footsteps: {fileID: 1671786042}
@@ -7196,6 +7217,7 @@ MonoBehaviour:
   fireRate: 0.25
   baseDamage: 1
   bulletSpeed: 18
+  shootSFX: {fileID: 0}
 --- !u!114 &664841631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7213,6 +7235,9 @@ MonoBehaviour:
   shootingSystem: {fileID: 664841630}
   powerUpSystem: {fileID: 664841629}
   gunPoint: {fileID: 53966754}
+  hurtSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
+  shieldAbsorbSFX: {fileID: 0}
 --- !u!114 &664841632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,7 +7264,7 @@ GameObject:
   - component: {fileID: 805573391}
   - component: {fileID: 805573390}
   - component: {fileID: 805573389}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Mobile_Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7509,6 +7534,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850213835}
   m_CullTransparentMesh: 1
+--- !u!1 &855481590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855481592}
+  - component: {fileID: 855481591}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &855481591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855481590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1184e2dff86944c814e005b0173161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicVolume: 0.5
+  sfxVolume: 0.5
+--- !u!4 &855481592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855481590}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876126419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8755,7 +8828,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1198959249089006127, guid: 741a2d6dc26f6634ca39c25c28be253e, type: 3}
+  m_Sprite: {fileID: 611671719332841703, guid: 9714386363f0b8147a35748c541855a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8798,7 +8871,7 @@ GameObject:
   - component: {fileID: 1129021461}
   - component: {fileID: 1129021463}
   - component: {fileID: 1129021462}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8949,7 +9022,7 @@ GameObject:
   - component: {fileID: 1161885311}
   - component: {fileID: 1161885310}
   - component: {fileID: 1161885309}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9016,7 +9089,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1570265941
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1161885312
@@ -9055,7 +9128,7 @@ GameObject:
   - component: {fileID: 1205093806}
   - component: {fileID: 1205093808}
   - component: {fileID: 1205093807}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9754,7 +9827,7 @@ GameObject:
   - component: {fileID: 1324724818}
   - component: {fileID: 1324724817}
   - component: {fileID: 1324724816}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Mobile_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15797,7 +15870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852793773}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hearts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15839,7 +15912,7 @@ GameObject:
   - component: {fileID: 1908082352}
   - component: {fileID: 1908082354}
   - component: {fileID: 1908082353}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16057,7 +16130,7 @@ GameObject:
   - component: {fileID: 2066386034}
   - component: {fileID: 2066386033}
   - component: {fileID: 2066386032}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Mobile_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16470,3 +16543,4 @@ SceneRoots:
   - {fileID: 254301219}
   - {fileID: 2062954048}
   - {fileID: 1161885312}
+  - {fileID: 855481592}

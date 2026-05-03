@@ -43,16 +43,25 @@ public class CrabEnemy : EnemyBase
     {
         if (currentState == State.Dead) return;
         currentState = State.Dead;
+        
+        CancelInvoke(); // Stop pending DropMine calls
 
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false; // Stop physics
         if (TryGetComponent<Collider2D>(out var col)) col.enabled = false;
 
-        if (anim != null) anim.Play("death_crab"); // play death animation and stay there
+        if (anim != null) 
+        {
+            anim.enabled = true;
+            anim.Play("death_crab", 0, 0f); // Force play from start
+        }
 
         if (GameFeel.Instance != null) GameFeel.Instance.Freeze(0.08f, 0f);
         if (Random.value < powerUpDropChance && PowerUpManager.Instance != null) PowerUpManager.Instance.SpawnAt(transform.position);
         if (ScoreManager.Instance != null) ScoreManager.Instance.AddKill(maxHP);
+
+        // Destroy after animation
+        Destroy(gameObject, 2f);
     }
 
     private void Update()
