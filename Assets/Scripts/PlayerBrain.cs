@@ -138,7 +138,7 @@ public class PlayerBrain : MonoBehaviour
         {
             _shieldHitsRemaining--;
             Debug.Log($"[PlayerBrain] Shield absorbed the hit! Shields remaining: {_shieldHitsRemaining}");
-            if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(shieldAbsorbSFX);
+            if (AudioManager.Instance != null) AudioManager.Instance.PlayShieldAbsorbSFX(shieldAbsorbSFX);
             return;
         }
 
@@ -152,7 +152,7 @@ public class PlayerBrain : MonoBehaviour
     {
         OnDamaged?.Invoke(amount);
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(hurtSFX);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPlayerHurtSFX(hurtSFX);
 
         // Trigger game feel
         if (GameFeel.Instance != null)
@@ -166,7 +166,7 @@ public class PlayerBrain : MonoBehaviour
     {
         OnDied?.Invoke();
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(deathSFX);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPlayerDeathSFX(deathSFX);
 
         // Trigger game feel
         if (GameFeel.Instance != null)

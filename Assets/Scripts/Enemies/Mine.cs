@@ -11,6 +11,9 @@ public class Mine : MonoBehaviour
     public float damage = 1f;
     public float explosionDuration = 0.5f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip blastSFX;
+
     private float age;
     private bool isDetonated;
 
@@ -50,6 +53,9 @@ public class Mine : MonoBehaviour
     {
         if (isDetonated) return;
         isDetonated = true;
+
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMineBlastSFX(blastSFX);
 
         // Deal damage in radius
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius * 1.5f);

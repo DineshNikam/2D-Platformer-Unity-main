@@ -63,7 +63,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
         }
         else
         {
-            if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(hitSFX);
+            if (AudioManager.Instance != null) AudioManager.Instance.PlayEnemyHitSFX(hitSFX);
         }
     }
 
@@ -74,7 +74,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable
             GameFeel.Instance.Freeze(0.08f, 0f);
         }
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(deathSFX);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayEnemyDeathSFX(deathSFX);
 
         // TODO: ParticleManager.Instance.PlayAt("EnemyExplode", transform.position);
         Debug.Log($"Enemy {gameObject.name} exploded at {transform.position}");

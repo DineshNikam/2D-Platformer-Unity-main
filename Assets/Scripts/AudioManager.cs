@@ -9,8 +9,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
 
+    [Header("Shared library")]
+    [Tooltip("Fallback clips when scene objects leave SFX fields empty.")]
+    [SerializeField] private GameAudioLibrary audioLibrary;
+
     [Header("Clips (assign in Inspector)")]
-    [Tooltip("Looped on the Menu (build index 0) whenever that scene loads.")]
+    [Tooltip("Optional override; if empty, uses library.menuMusic when present.")]
     [SerializeField] private AudioClip menuMusicClip;
 
     [Header("Default Volumes")]
@@ -19,6 +23,9 @@ public class AudioManager : MonoBehaviour
 
     private const string MUSIC_KEY = "MusicVolume";
     private const string SFX_KEY = "SFXVolume";
+
+    private static AudioClip Prefer(AudioClip primary, AudioClip fromLibrary) =>
+        primary != null ? primary : fromLibrary;
 
     private void Awake()
     {
@@ -54,8 +61,10 @@ public class AudioManager : MonoBehaviour
     /// <summary>Build index 0 is the first scene in File → Build Settings (your Menu).</summary>
     private void TryPlayMenuMusicForBuildIndex(int buildIndex)
     {
-        if (buildIndex != 0 || menuMusicClip == null) return;
-        PlayMusic(menuMusicClip);
+        if (buildIndex != 0) return;
+        AudioClip menu = Prefer(menuMusicClip, audioLibrary != null ? audioLibrary.menuMusic : null);
+        if (menu == null) return;
+        PlayMusic(menu);
     }
 
     private AudioSource CreateAudioSource(string name, bool loop)
@@ -98,6 +107,64 @@ public class AudioManager : MonoBehaviour
     {
         if (sfxSource == null || clip == null) return;
         sfxSource.PlayOneShot(clip, sfxVolume * volumeMultiplier);
+    }
+
+    public void PlayJumpSFX(bool isDoubleJump, AudioClip jumpOverride, AudioClip doubleJumpOverride)
+    {
+        AudioClip c = isDoubleJump
+            ? Prefer(doubleJumpOverride, audioLibrary != null ? audioLibrary.doubleJump : null)
+            : Prefer(jumpOverride, audioLibrary != null ? audioLibrary.jump : null);
+        PlaySFX(c);
+    }
+
+    public void PlayLandSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.land : null));
+    }
+
+    public void PlayShootSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.shoot : null));
+    }
+
+    public void PlayButtonSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.buttonClick : null));
+    }
+
+    public void PlayPickupSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.pickup : null));
+    }
+
+    public void PlayPlayerHurtSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.playerHurt : null));
+    }
+
+    public void PlayPlayerDeathSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.playerDeath : null));
+    }
+
+    public void PlayShieldAbsorbSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.shieldAbsorb : null));
+    }
+
+    public void PlayEnemyHitSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.enemyHit : null));
+    }
+
+    public void PlayEnemyDeathSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.enemyDeath : null));
+    }
+
+    public void PlayMineBlastSFX(AudioClip overrideClip)
+    {
+        PlaySFX(Prefer(overrideClip, audioLibrary != null ? audioLibrary.mineBlast : null));
     }
 
     public void SetMusicVolume(float volume)

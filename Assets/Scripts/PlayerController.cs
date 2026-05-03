@@ -65,11 +65,23 @@ public class PlayerController : MonoBehaviour
     // ─── Facing Direction (GDD §3.4) ────────────────────────────
     /// <summary>+1 (right) or -1 (left). Driven by last non-zero horizontal input / sprite flip.</summary>
     public int FacingDirection => transform.localScale.x >= 0 ? 1 : -1;
+    void Awake()
+    {
+ #if UNITY_EDITOR
+ controlmode = Controls.pc;
+ #else
+ controlmode = Controls.mobile;
+ #endif
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         footEmissions = footsteps.emission;
+
+        bool grounded = IsGrounded();
+        wasonGround = grounded;
+        wasGroundedLastFrame = grounded;
 
         if (controlmode == Controls.mobile)
         {
@@ -115,6 +127,8 @@ public class PlayerController : MonoBehaviour
         {
             if (ImpactEffect != null)
                 ImpactEffect.Play();
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayLandSFX(landSFX);
         }
 
         wasonGround = isGroundedBool;
@@ -222,7 +236,8 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         if (playeranim != null)
             playeranim.SetTrigger("jump");
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(isDoubleJump ? doubleJumpSFX : jumpSFX);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayJumpSFX(isDoubleJump, jumpSFX, doubleJumpSFX);
     }
 
     bool TryConsumeJump()

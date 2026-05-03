@@ -25,7 +25,7 @@ public class GameplayUIManager : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(buttonClickSFX);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayButtonSFX(buttonClickSFX);
     }
 
     private void Awake()

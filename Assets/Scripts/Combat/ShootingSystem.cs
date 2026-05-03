@@ -79,7 +79,7 @@ public class ShootingSystem : MonoBehaviour
             speed:     bulletSpeed
         );
 
-        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(shootSFX);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayShootSFX(shootSFX);
     }
 
     /// <summary>Called by DamageBoost power-up (GDD §6.2). Pass 1f to reset.</summary>
