@@ -19,7 +19,8 @@ public class ExitTrigger : MonoBehaviour
         //anim.SetTrigger("Exit");
         yield return new WaitForSeconds(0.1f);
 
-        UIManager.instance.fadeToBlack = true;
+        if (UIManager.instance != null)
+            UIManager.instance.fadeToBlack = true;
 
         yield return new WaitForSeconds(2f);
         // Do something after flag anim

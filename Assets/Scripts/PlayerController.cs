@@ -58,45 +58,136 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem footsteps;
     private ParticleSystem.EmissionModule footEmissions;
+    bool _hasFootsteps;
 
     public ParticleSystem ImpactEffect;
     private bool wasonGround;
+
+    [Header("Diagnostics")]
+    [Tooltip("Writes step-by-step PlayerController.Start (and UI/HUD helpers it calls). Disable after debugging.")]
+    [SerializeField] bool logStartupSequence = true;
 
     // ─── Facing Direction (GDD §3.4) ────────────────────────────
     /// <summary>+1 (right) or -1 (left). Driven by last non-zero horizontal input / sprite flip.</summary>
     public int FacingDirection => transform.localScale.x >= 0 ? 1 : -1;
     void Awake()
     {
-//  #if UNITY_EDITOR
-//  controlmode = Controls.pc;
-//  #else
-//  controlmode = Controls.mobile;
-//  #endif
+        // Matches typical Android/iOS expectation: packaged builds always use touch UI + input hooks.
+#if !UNITY_EDITOR
+        controlmode = Controls.mobile;
+#endif
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (!Application.isPlaying || !enabled) return;
+        if (GameplayUIManager.Instance != null)
+            GameplayUIManager.Instance.RefreshMobileControlVisibility();
+        if (controlmode == Controls.mobile && UIManager.instance != null)
+            UIManager.instance.EnableMobileControls();
+        else if (UIManager.instance != null)
+            UIManager.instance.DisableMobileControls();
+    }
+#endif
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        footEmissions = footsteps.emission;
+        if (!logStartupSequence)
+        {
+            RunStartBody();
+            return;
+        }
 
-        bool grounded = IsGrounded();
+        try
+        {
+            LogStartup(nameof(Start), "BEGIN");
+            RunStartBody();
+            LogStartup(nameof(Start), "END OK");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"[PlayerController:{name}] {nameof(Start)} EXCEPTION:\n{ex}", this);
+            throw;
+        }
+    }
+
+    void RunStartBody()
+    {
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(GetComponent)}<{nameof(Rigidbody2D)}>() …");
+        rb = GetComponent<Rigidbody2D>();
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"rb={(rb != null ? "ok" : "NULL")}");
+
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"checking {nameof(footsteps)}: {(footsteps != null ? "assigned" : "NULL")}");
+        _hasFootsteps = footsteps != null;
+        if (_hasFootsteps)
+        {
+            if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(footsteps)}.{nameof(ParticleSystem.emission)} …");
+            footEmissions = footsteps.emission;
+        }
+        else if (logStartupSequence)
+            LogStartup(nameof(RunStartBody), "skip emission (no footsteps)");
+
+        if (logStartupSequence) LogStartup(nameof(IsGrounded), "from Start …");
+        bool grounded = IsGrounded(logStartupDiag: logStartupSequence);
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"initial grounded={grounded}");
         wasonGround = grounded;
         wasGroundedLastFrame = grounded;
 
-        if (controlmode == Controls.mobile)
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(controlmode)}={controlmode}, {nameof(UIManager.instance)}={(UIManager.instance != null ? "ok" : "NULL")}");
+
+        if (controlmode == Controls.mobile && UIManager.instance != null)
         {
+            if (logStartupSequence) LogStartup(nameof(UIManager.EnableMobileControls), "(from Player)");
             UIManager.instance.EnableMobileControls();
+            if (logStartupSequence) LogStartup(nameof(UIManager.EnableMobileControls), "returned");
         }
 
-        CacheAnimatorBoolParams();
+        if (GameplayUIManager.Instance != null)
+        {
+            if (logStartupSequence) LogStartup(nameof(GameplayUIManager.RefreshMobileControlVisibility), $"Instance ok, {(logStartupSequence ? "trace=true" : "")}");
+            GameplayUIManager.Instance.RefreshMobileControlVisibility(logStartupSequence);
+            if (logStartupSequence) LogStartup(nameof(GameplayUIManager.RefreshMobileControlVisibility), "returned");
+        }
+        else if (logStartupSequence)
+            LogStartup(nameof(GameplayUIManager), "Instance NULL — skipping RefreshMobileControlVisibility");
+
+        if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(playeranim)} before resolve: {(playeranim != null ? "assigned" : "NULL")}");
+        if (playeranim == null)
+        {
+            if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(GetComponent)}<Animator> / {nameof(GetComponentInChildren)} …");
+            playeranim = GetComponent<Animator>() ?? GetComponentInChildren<Animator>(true);
+            if (logStartupSequence) LogStartup(nameof(RunStartBody), $"{nameof(playeranim)} after resolve: {(playeranim != null ? "ok" : "NULL")}");
+        }
+
+        if (logStartupSequence) LogStartup(nameof(CacheAnimatorBoolParams), "BEGIN");
+        CacheAnimatorBoolParams(logStartupSequence);
+        if (logStartupSequence) LogStartup(nameof(CacheAnimatorBoolParams), "END");
     }
 
-    void CacheAnimatorBoolParams()
+    void LogStartup(string phase, string message)
+    {
+        Debug.Log($"[PlayerStartup] {name} | {phase} | {message}", this);
+    }
+
+    void CacheAnimatorBoolParams(bool logTrace = false)
     {
         _animHasRun = false;
         _animHasIsGrounded = false;
-        if (playeranim == null || playeranim.runtimeAnimatorController == null)
+
+        if (playeranim == null)
+        {
+            if (logTrace) LogStartup(nameof(CacheAnimatorBoolParams), "playeranim is NULL → early out");
             return;
+        }
+
+        if (playeranim.runtimeAnimatorController == null)
+        {
+            if (logTrace) LogStartup(nameof(CacheAnimatorBoolParams), $"playeranim ok instanceID={playeranim.GetInstanceID()} but runtimeAnimatorController is NULL → early out");
+            return;
+        }
+
+        if (logTrace) LogStartup(nameof(CacheAnimatorBoolParams), $"scanning Animator parameters ({playeranim.parameterCount}) …");
 
         for (int i = 0; i < playeranim.parameterCount; i++)
         {
@@ -105,6 +196,9 @@ public class PlayerController : MonoBehaviour
             if (p.name == "isGrounded" && p.type == AnimatorControllerParameterType.Bool) _animHasIsGrounded = true;
             if (p.name == "die" && p.type == AnimatorControllerParameterType.Trigger) _animHasDie = true;
         }
+
+        if (logTrace)
+            LogStartup(nameof(CacheAnimatorBoolParams), $"flags: HasRun={_animHasRun} HasIsGrounded={_animHasIsGrounded} HasDieTrigger={_animHasDie}");
     }
 
     private void Update()
@@ -135,18 +229,20 @@ public class PlayerController : MonoBehaviour
 
         if (moveX != 0)
         {
-            if (_animHasRun)
+            if (_animHasRun && playeranim != null)
                 playeranim.SetBool("run", true);
 
             FlipSprite(moveX);
-            footEmissions.rateOverTime = 35f;
+            if (_hasFootsteps)
+                footEmissions.rateOverTime = 35f;
         }
         else
         {
-            if (_animHasRun)
+            if (_animHasRun && playeranim != null)
                 playeranim.SetBool("run", false);
 
-            footEmissions.rateOverTime = 0f;
+            if (_hasFootsteps)
+                footEmissions.rateOverTime = 0f;
         }
 
         if (controlmode == Controls.pc)
@@ -169,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
         wasGroundedLastFrame = isGroundedBool;
 
-        if (_animHasIsGrounded)
+        if (_animHasIsGrounded && playeranim != null)
             playeranim.SetBool("isGrounded", isGroundedBool);
     }
 
@@ -203,30 +299,19 @@ public class PlayerController : MonoBehaviour
     /// <summary>Disables movement input and stops current horizontal movement.</summary>
     public void DisableInput()
     {
-        System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] DisableInput() called. Current isPaused: {isPaused}\n");
         isPaused = true;
         moveX = 0;
         if (rb != null)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
-        footEmissions.rateOverTime = 0f;
+        if (_hasFootsteps)
+            footEmissions.rateOverTime = 0f;
 
         if (playeranim != null)
         {
-            System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] Triggering 'die'. _animHasDie: {_animHasDie}, playeranim.enabled: {playeranim.enabled}\n");
             if (_animHasDie)
-            {
                 playeranim.SetTrigger("die");
-            }
-            else
-            {
-                System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] WARNING: _animHasDie is FALSE!\n");
-            }
-        }
-        else
-        {
-            System.IO.File.AppendAllText("DeathDebugLog.txt", $"[{System.DateTime.Now:HH:mm:ss.fff}] ERROR: playeranim is NULL!\n");
         }
     }
 
@@ -269,25 +354,42 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    bool IsGrounded()
+    bool IsGrounded(bool logStartupDiag = false)
     {
         if (groundCheck == null)
+        {
+            if (logStartupDiag) LogStartup(nameof(IsGrounded), "groundCheck is NULL → false");
             return false;
+        }
 
         Vector2 feet = groundCheck.position;
+        if (logStartupDiag)
+            LogStartup(nameof(IsGrounded), $"feet={feet} mask={groundLayer.value} radius={groundCheckRadius} rayLen={groundRayLength}");
+
         Collider2D[] cols = Physics2D.OverlapBoxAll(feet, new Vector2(groundCheckRadius * 2, 0.05f), 0f, groundLayer);
+        if (logStartupDiag) LogStartup(nameof(IsGrounded), $"OverlapBoxAll count={cols?.Length ?? -1}");
         foreach (var c in cols)
         {
-            if (c.gameObject != gameObject) return true;
+            if (c.gameObject != gameObject)
+            {
+                if (logStartupDiag) LogStartup(nameof(IsGrounded), $"hit collider (overlap) {c.name} → true");
+                return true;
+            }
         }
 
         Vector2 rayOrigin = new Vector2(feet.x, feet.y - 0.05f);
         RaycastHit2D[] hits = Physics2D.RaycastAll(rayOrigin, Vector2.down, groundRayLength, groundLayer);
+        if (logStartupDiag) LogStartup(nameof(IsGrounded), $"RaycastAll count={hits?.Length ?? -1}");
         foreach (var h in hits)
         {
-            if (h.collider != null && h.collider.gameObject != gameObject) return true;
+            if (h.collider != null && h.collider.gameObject != gameObject)
+            {
+                if (logStartupDiag) LogStartup(nameof(IsGrounded), $"hit ray {h.collider.name} → true");
+                return true;
+            }
         }
-        
+
+        if (logStartupDiag) LogStartup(nameof(IsGrounded), "no ground hits → false");
         return false;
     }
 

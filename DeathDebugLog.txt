@@ -24,3 +24,6 @@
 [01:58:33.905] GameManager.Death() called. isGameOver: False
 [01:58:33.906] DisableInput() called. Current isPaused: False
 [01:58:33.906] Triggering 'die'. _animHasDie: True, playeranim.enabled: True
+[02:09:14.351] GameManager.Death() called. isGameOver: False
+[02:09:14.354] DisableInput() called. Current isPaused: False
+[02:09:14.355] Triggering 'die'. _animHasDie: True, playeranim.enabled: True

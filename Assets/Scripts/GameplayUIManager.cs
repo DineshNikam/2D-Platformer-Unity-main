@@ -70,12 +70,24 @@ public class GameplayUIManager : MonoBehaviour
         }
 
         ShowHUD();
-        ApplyMobileControlVisibility();
     }
 
-    private void ApplyMobileControlVisibility()
+    /// <summary>Call after <see cref="PlayerController.controlmode"/> changes or when HUD is reopened.</summary>
+    /// <param name="traceLog">When true (e.g. from Player Startup), emits tagged Log lines for logcat/device debugging.</param>
+    public void RefreshMobileControlVisibility(bool traceLog = false) => ApplyMobileControlVisibility(traceLog);
+
+    private void ApplyMobileControlVisibility(bool traceLog = false)
     {
-        if (hudPanel == null) return;
+        if (traceLog)
+            Debug.Log($"[{nameof(GameplayUIManager)}:{name}] ApplyMobileControlVisibility BEGIN; hudPanel={(hudPanel != null)}", this);
+
+        if (hudPanel == null)
+        {
+            if (traceLog)
+                Debug.LogWarning($"[{nameof(GameplayUIManager)}:{name}] hudPanel NULL — skip mobile button visibility.", this);
+            return;
+        }
+
         var pc = Object.FindFirstObjectByType<PlayerController>();
         bool showMobile = (pc == null) || (pc.controlmode == Controls.mobile);
 
@@ -83,8 +95,18 @@ public class GameplayUIManager : MonoBehaviour
         foreach (var btnName in mobileNames)
         {
             var t = hudPanel.transform.Find(btnName);
-            if (t != null) t.gameObject.SetActive(showMobile);
+            if (t != null)
+            {
+                t.gameObject.SetActive(showMobile);
+                if (traceLog)
+                    Debug.Log($"[{nameof(GameplayUIManager)}:{name}] {btnName}.SetActive({showMobile})", this);
+            }
+            else if (traceLog)
+                Debug.LogWarning($"[{nameof(GameplayUIManager)}:{name}] child '{btnName}' NOT FOUND under hudPanel '{hudPanel.name}'.", this);
         }
+
+        if (traceLog)
+            Debug.Log($"[{nameof(GameplayUIManager)}:{name}] ApplyMobile END; showMobile={showMobile}; PlayerController={(pc != null)}", this);
     }
 
     private void BindButton(GameObject panel, string nameHint, UnityEngine.Events.UnityAction action)
@@ -120,6 +142,7 @@ public class GameplayUIManager : MonoBehaviour
         CloseAllPanels();
         if (hudPanel) hudPanel.SetActive(true);
         Time.timeScale = 1f;
+        ApplyMobileControlVisibility();
     }
 
     public void ShowPauseMenu()

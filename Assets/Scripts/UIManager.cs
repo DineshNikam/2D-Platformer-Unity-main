@@ -14,19 +14,44 @@ public class UIManager : MonoBehaviour
 
     public PlayerController playerController;
 
+    [Header("Diagnostics")]
+    [Tooltip("Logs EnableMobileControls / DisableMobileControls calls (helps trace Player.Start on device).")]
+    [SerializeField] bool logBootstrap = true;
+
 
     private void Awake()
     {
         instance = this;
     }
 
+    void LogBootstrap(string message)
+    {
+        if (!logBootstrap) return;
+        Debug.Log($"[UIManager:{name}] {message}", this);
+    }
+
     public void DisableMobileControls()
     {
+        LogBootstrap($"{nameof(DisableMobileControls)} enter; mobileControls={(mobileControls != null ? "assigned" : "NULL")}");
+        if (mobileControls == null)
+        {
+            Debug.LogError($"[UIManager:{name}] {nameof(DisableMobileControls)}: mobileControls is NULL.", this);
+            return;
+        }
         mobileControls.SetActive(false);
+        LogBootstrap($"{nameof(DisableMobileControls)} done.");
     }
+
     public void EnableMobileControls()
     {
+        LogBootstrap($"{nameof(EnableMobileControls)} enter; mobileControls={(mobileControls != null ? "assigned" : "NULL")}");
+        if (mobileControls == null)
+        {
+            Debug.LogError($"[UIManager:{name}] {nameof(EnableMobileControls)}: mobileControls is NULL.", this);
+            return;
+        }
         mobileControls.SetActive(true);
+        LogBootstrap($"{nameof(EnableMobileControls)} done.");
     }
 
     private void Update()
