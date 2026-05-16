@@ -26,7 +26,7 @@
 # Visual Studio cache directory
 .vs/
 
-*.apk
+#*.apk
 # Gradle cache directory
 .gradle/
 
