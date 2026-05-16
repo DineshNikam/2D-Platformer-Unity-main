@@ -3,3 +3,4 @@
 *.cs linguist-language=C#
 *.shader linguist-vendored
 *.hlsl linguist-vendored
+*.apk filter=lfs diff=lfs merge=lfs -text
